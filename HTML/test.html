@@ -279,13 +279,50 @@
       <input type="text" value="第一行&#10;&#13;第二行" />
     </div>
     <div>
-      <h2>input+datelist+option实现下拉框</h2>
+      <h2>input+datalist+option实现下拉框</h2>
       <input type="text" list="datalist" name="datalist" />
       <datalist id="datalist">
         <option value="a">a</option>
         <option value="b">b</option>
         <option value="c">c</option>
       </datalist>
+    </div>
+    <div>
+      <h2>密码强度指示器</h2>
+      <p>
+        弱：<meter
+          min="0"
+          low="33"
+          high="66"
+          max="100"
+          value="30"
+          optimum="100"
+        ></meter>
+      </p>
+      <p>
+        中等：<meter
+          min="0"
+          low="33"
+          high="66"
+          max="100"
+          value="55"
+          optimum="100"
+        ></meter>
+      </p>
+      <p>
+        强：<meter
+          min="0"
+          low="33"
+          high="66"
+          max="100"
+          value="80"
+          optimum="100"
+        ></meter>
+      </p>
+    </div>
+    <div>
+      <h2>进度条</h2>
+      <progress value="70" max="100">70 %</progress>
     </div>
   </body>
 </html>

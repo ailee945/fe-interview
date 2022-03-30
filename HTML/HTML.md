@@ -1,6 +1,6 @@
-[toc]
-
 # HTML
+
+[toc]
 
 ## 什么是 HTML？
 
@@ -1260,3 +1260,282 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 ## 如何构建一个兼容老版本浏览器的自动补全输入框
 
+可以在datalist标签中嵌入select和option标签，当datalist不被支持时展示下拉选项，提供用户手动输入内容的第二选择
+
+  ```js
+  <label for="colorInput">What is your favorite color ?</label>
+  <input type="text" id="colorInput" list="colorList">
+  <dataList id="colorList">
+    <label for="colorSuggestion">or pcik a color</label>
+    <select>
+      <option>Blue</option>
+      <option>Red</option>
+      <option>Orange</option>
+      <option>Green</option>
+      <option>Yellow</option>
+      <option>Pink</option>
+      <option>Purple</option>
+      <option>White</option>
+    </select>
+  </dataList>
+  ```
+
+## 如何构建单选框，如何构建复选框
+
+单选框
+
+- 设置`type="radio"`属性
+- 相同的name同时只有一个能被选中
+- 选中项具有checked属性，不会发送name的值
+
+复选框
+
+- 设置`type = "checked"`属性
+- 表单被提交后可以获得提交键名和键值对字符串
+- 选中项具有checked属性
+
+## 如何在表单中发送图片中被点击时的坐标
+
+- 设置 type=image
+  - 支持与 `<img>` 元素的相同属性
+  - 支持其它表单按钮的支持属性
+- 使用图像按钮提交表单
+  - 不会提交自身值
+  - 会提交单击处相对于图像左上角的 X 和 Y 坐标
+    - 以查询字符串的格式跟在 URL 后, 例如`https://www.leetcode-cn.com/?pos.x=100&pos.y=200` pos为图片的name
+
+## 支持max和min的表单组件有哪些
+
+- 数字选择器type = number range
+- 时间选择器type = datetime-local month time week
+- 进度条选择器`<progress>`
+- 仪表选择器`<meter>`
+
+## 哪种表单适合显示密码强度
+
+- low 和 high 将范围划分为三个部分
+  - 较低部分min-low
+  - 中间部分low-high
+  - 较高部分high-max
+- `optimum`定义`<meter>`元素的最优解
+  - 这个属性用来指示最优/最佳取值。它必须在正确的值域内（由最小值属性和最大值属性定义）。当使用了 low 和 high 属性时，它指明哪一个取值范围是更好的。例如，假设它介于最小值和 low 之间，那么 lower 区间就被认为是更佳的取值范围。
+  - optimum 值在较低范围内，较低范围最优，中等范围一般，较高范围最坏
+  - optimum 值在中等范围内，较低范围一般，中等范围最优，较高范围最坏
+  - optimum 值在较高范围内，较低范围最坏，中等范围一般，较高范围最优
+- `<meter>`颜色
+  - 最优显示为绿色
+  - 平均显示为黄色
+  - 最坏显示为红色
+
+## 实用GET和POST发送表单数据有何不同
+
+根据 rfc-2616 规范，HTTP 协议中的 GET 和 POST 主要是语义上的区别
+
+在浏览器的实现及应用中，存在 GET 和 POST 的最佳实践
+
+[GET](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/GET) 发送表单数据
+
+- 设置 `<form>`的 method 属性为 get
+- 数据以查询字符串的形式被追加到 URL，参数上限受早期浏览器和 Web 服务器的限制
+- 问号 ? 后跟查询字符串
+- 符号 & 分隔开的键名键值对
+- 默认缓存，受缓存策略控制
+- 可回退
+- 可收藏
+- 参数随 URL 保存在浏览器历史中
+- 适用于无副作用，幂等的请求
+
+[POST](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST) 发送表单数据
+
+- 设置 `<form>` 的 method 属性为 post
+- 数据以查询字符串的形式附加到请求体中，参数上限可能受后端脚本限制，如 PHP 通过 max_input_vars 限制最大输入参数上限
+- 包含请求行
+  - Content-Type: application/x-ww-form-urlencoded
+  - Content-Length: {请求体的数据长度}
+- 默认不缓存，受缓存策略控制，可声明缓存
+- 通常回退会触发重新提交警告，避免回放攻击
+- 通常不可收藏
+- 参数不随 URL 保存
+- 适用于有副作用，非幂等的请求
+
+## form的enctype属性都有哪些值，各自适合什么场景
+
+- application/x-www-form-urlencoded 默认值，数据转换为键值对，用于不含文件的表单提交
+- multipart/form-data 使用`<input>`标签上传文件时，必须设置此类型
+- text/plain 表示纯文本形式，HTML5 新增，通常用于调试
+
+## 什么是表单校验，为什么要进行表单校验
+
+什么是表单校验：向Web应用输入或提交数据时，验证数据的过程就是表达校验
+
+- 正确则允许数据继续提交后端或者后台服务
+- 失败则提示错误类型、原因、位置或者更改意见等
+
+为什么要进行表单校验
+
+- 确保数据格式正确
+  - 引导用户：引导用户输入符合预期的数据
+  - 保护系统：避免不正确的格式影响程序的运行
+- 信息安全
+  - 保护用户：确保用户的密码足够安全，不易被暴力破解和泄漏
+  - 减少攻击：经常与后段校验一起应用，减少恶意或伪造的数据提交
+
+## 表单验证都有哪些类型
+
+- 客户端校验
+  - 校验时机：发生在应用端或者浏览器端，表单数据被提交到服务器端之前
+  - 实时性：即时反馈
+  - 作用：保证格式正确，保证信息安全
+  - 方式：
+    - js：第三方库
+    - HTML5内置校验：require min max minlength maxlength pattern
+    - HTML5+js
+- 服务端校验
+  - 校验时机：数据被提交到后端后
+  - 滞后性：需等待服务器响应
+  - 作用：供验重等需要查询数据库的校验，校验、过滤和清洗数据
+  - 方式：通常采用ajax方式
+
+## 如何使用HTML5内置的表单校验
+
+- 校验属性
+  - type 类型
+  - 非空必填校验 required
+  - 长度校验 minlength maxlength
+  - 范围校验 min max step
+- [Constraint Validation API](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#the-constraint-validation-api) 约束验证 API
+  - 属性
+    - validationMessage 本地化消息
+      - 描述元素不满足校验条件时的文本信息
+      - 无需校验或满足校验条件时，为空
+    - validity ValidityState 对象，每一个子项都返回布尔值
+      - customError 是否设置了自定义错误
+      - patternMismatch 是否匹配正则表达式
+      - rangeOverflow 元素的值是否高于所设置最大值
+      - rangeUnderflow 元素的值是否低于所设置最小值
+      - stepMismatch 元素的值是否符合 step 属性规则
+      - tooLong 元素的值是否超过最大长度
+      - typeMismatch 元素的值是否出现语法错误
+      - valid 元素的值是否有效
+      - valueMissing 元素的值是否 required 且为空
+      - willValidate 元素的值是否是在表单提交时被校验
+  - 方法
+    - checkValidity() 校验元素的值是否有效
+    - reportValidity() 元素报告其校验状态，重新展示校验失败提示给用户
+    - setCustomValidity(message) 为元素添加自定义的错误消息
+- 伪类
+  - :valid 有效
+  - :invalid 无效
+  - :in-range 在范围内
+  - :out-of-range 超出范围
+
+## 使用js发送表单数据有哪些方法
+
+参见[mdn](https://developer.mozilla.org/zh-CN/docs/Learn/Forms/Sending_forms_through_JavaScript)
+
+- 1. 构造请求参数
+  - 构建查询字符串
+    - 使用 ES
+  
+      ```js
+      const buildParam = data => {
+        const dataPairs = []
+        for (const key in data)
+          dataPairs.push(encodeURIComponent(key) + encodeURIComponent(data[key]))
+        return dataPairs.join('&').replace(/%20/g, '+')
+      }
+      ```
+
+    - 使用 FormData 对象
+      - 将对象转为 FormData 对象
+
+        ```js
+        const buildParam = data => {
+          const formData = new FormData()
+          for (const key in data)
+            formData.append(key, data[key])
+          return formData
+        }
+        ```
+
+      - 将表单元素构建 `FormData` 对象
+
+        ```js
+        const buildParam = form => {
+          const formData = new FormData(form)
+          return formData
+        }
+        ```
+
+- 2. 然后，发送数据
+
+  - 使用 XMLHttpRequest 对象
+
+    ```js
+    const send = (url, param, cb) => {
+      const request = new XMLHttpRequest()
+      request.addEventListener('load', e => cb(null, e => cb(e.target.responseText)))
+      request.addEventListener('error', e => cb(e.message))
+      request.open('POST', url)
+      request.send(param)
+    }
+    ```
+
+  - 使用 fetch 方法
+
+    ```js
+    const send = (url, param, cb) => {
+      fetch(url, {
+        method: 'POST',
+        body: param
+      }).then(response => cb(null, response)).catch(error => cb(error))
+    }
+    ```
+
+## 如何自定义表单元素的样式
+
+首先，由于表单元素先于 CSS 被添加到 HTML，早期的渲染依靠底层系统实现，至今，表单元素在不同浏览器，同一浏览器的不同系统版本中，存在不同的默认外观。
+
+自定义表单样式的方法：
+
+- 使用 JavaScript + HTML + CSS 重建表单元素，模拟其交互行为。最终通过 UI 组件库的方式供设计团队参考和业务开发调用。
+  - 保持跨浏览器，跨操作系统的一致性
+  - 可以自定义所有样式
+  - 交互、校验、提交等都需要自己完成，代码多，复杂度高
+  - JavaScript 出错或禁用，CSS 加载失败，都可能导致表单失效。在稳定性要求高的场景，需要能降级到原生表单元素
+- 自定义原生表单元素的样式
+  - 原生表单元素按应用 CSS 的难度 ，分为三类
+  - 容易应用，跨平台不易出问题：`<form>` `<fieldset>` `<label>` `<output>`
+  - 难应用，不同平台写不同属性：`<legend>` `checkbox` `radio` `placeholder`
+  - 不推荐应用：`<select>` `<option>` `<optgroup>` `<datelist>` `<progress>` `<meter>`
+  - 保持跨平台一致性
+    - 字体和文本大小：继承父级元素的 CSS，而不使用系统默认样式
+
+      ```js
+      button, input, select, textarea {
+      font-family: inherit;
+      font-size: 100%;
+      }
+      ```
+
+      - 盒子模型：保持相同的宽度和高度
+
+        ```js
+        button, input, select, textarea {
+        -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+                box-sizing: border-box;
+        }
+        ```
+
+      - 定位
+        - `<legend>` 元素定位是 `<fieledset>` 父元素的上边框的最顶端
+        - `<textarea>` 元素的垂直对齐由基线改为顶端对齐 vertical-align: top
+      - 清除默认样式
+        - `-moz-appearance` 清除 Firefox 表单元素的默认样式
+        - `-webkit-appearance` 清除 Safari 和 Chrome 表单元素的默认样式
+      - 使用 CSS 伪类定义表单组件的细节
+      - CSS 2.1 支持 3 伪类：`:active` `:focus` `:hover`
+      - CSS Selector Level 3 新增 4 伪类：`:enabled` `:disabled` `:checked` `:indeterminate`
+      - CSS Basic UI Level 3 新增 9 伪类：`:default` `:valid` `:invalid` `:in-range` `:out-of-range` `:required` `:optional` `:read-only` `:read-write`
+      - CSS Selector Level 4 新增： `:user-error`
