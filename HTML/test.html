@@ -234,5 +234,58 @@
         </tbody>
       </table>
     </div>
+    <div>
+      <h2>表单元素分组</h2>
+      <form>
+        <fieldset>
+          <legend>health information</legend>
+          height: <input type="text" /> weight: <input type="text" />
+        </fieldset>
+        <fieldset>
+          <legend>user information</legend>
+          name: <input type="text" /> age: <input type="text" />
+        </fieldset>
+      </form>
+    </div>
+    <div>
+      <h2>名字为必填项目的表单</h2>
+      <label for="name">
+        姓名:
+        <abbr title="required">*</abbr>
+      </label>
+      <input id="name" type="text" name="name" />
+    </div>
+    <div>
+      <h2>邮箱输入框</h2>
+      <form action="">
+        <input type="email" multiple />
+        <button>submit</button>
+      </form>
+      <form>
+        <input
+          type="text"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+)+([,]\s*([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+))*$"
+        />
+        <input type="submit" />
+      </form>
+    </div>
+    <div>
+      <h2>换行符和回车符</h2>
+      <p>多行文本框</p>
+      <textarea placeholder="第一行&#10;&#13;第二行" rows="6">
+第一行&#10;&#13;第二行</textarea
+      >
+      <p>单行文本框</p>
+      <input type="text" value="第一行&#10;&#13;第二行" />
+    </div>
+    <div>
+      <h2>input+datelist+option实现下拉框</h2>
+      <input type="text" list="datalist" name="datalist" />
+      <datalist id="datalist">
+        <option value="a">a</option>
+        <option value="b">b</option>
+        <option value="c">c</option>
+      </datalist>
+    </div>
   </body>
 </html>

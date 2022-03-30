@@ -1106,3 +1106,157 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 - 不包裹，也没有设置 form 属性
   - 表单元素除默认行为外，不会有与表单定义的验证或与 Web 服务器的交互行为
   - 需要使用 JavaScript 定义它们的行为
+
+## 可以在表单里面嵌套另一个表单吗
+
+不可以，根据W3C规范：form 元素的 Content model 允许包含 流式内容，但不允许出现 form
+
+如果在表单元素里面嵌套另一个表单元素，不同浏览器的表现行为不一致
+
+## 如何分组表单元素
+
+`<fieldset>`用于表单小组件分组
+
+- 标题由其中第一个`<legend>`元素决定
+- 可设置form属性，用于将其中的一组元素于指定表单关联
+- 可设置disable属性，用于禁用其中不在`<legend>`的表单元素
+
+  ```js
+  <form>
+    <fieldset>
+      <legend>health information</legend>
+      height: <input type="text" />
+      weight: <input type="text" />
+    </fieldset>
+  </form>
+  <form>
+    <fieldset>
+      <legend>user information</legend>
+      name: <input type="text" />
+      age: <input type="text" />
+    </fieldset>
+  </form>
+  ```
+
+## 如何将标签链接到表单元素，链接后有什么好处
+
+方法
+
+- 将表单元素嵌套在`<label>`中（部分屏幕阅读器不支持）
+- 设置for属性，指向同一文档中可关联标签的id属性
+
+好处
+
+- 标签被点击时，关联的表单元素自动获取焦点
+- 屏幕阅读器会将标签中的文字与表单元素联系在一起朗读
+  - 可以读出需要填写的内容
+  - 读出该表单元素是否必填
+
+## 如何创建一个姓名为必填项的表单，满足语义和可访问性的要求
+
+- 表单元素的说明放在同一个标签中
+  - 便于屏幕阅读器关联后一起阅读
+- 避免使用嵌套，而是使用for属性
+  - 语义结构清晰
+  - 避免部分屏幕阅读器不支持
+
+  ```js
+    <label for="name">
+      姓名:
+      <abbr title="required">*</abbr>
+    </label>
+    <input id="name" type="text" name="name" />
+  ```
+
+## 如何禁用表单元素
+
+给表单元素增加disabled属性
+
+禁用一组表单，将一组表单元素放在`<fieldset>`，给它添加disabled属性
+
+## 如何让让表单元素自动对焦
+
+给表单元素增加autofocus属性
+
+文档中只有一个表单元素可以设置autofocus属性，多个表单设置autofocus属性只有第一个表单元素会自动对角
+
+## 如何将表单元素与表单关联
+
+- 将表单元素放在`<form>`中
+- 设置表单元素的form属性，指向`<form>`的id
+- 通过js设置表单元素关联，调用form的submit方法
+
+## 如何允许用户一次性输入多个电子邮件地址，逗号分隔
+
+- 使用email类型的input
+
+  ```js
+    <form action="">
+      <input type="email" multiple />
+      <button>submit</button>
+    </form>
+    <form>
+  ```
+
+- 使用text类型的input，增加正则校验
+  
+  ```js
+  <input
+    type="text"
+    pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+)+([,]\s*([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+))*$"
+  />
+  <input type="submit" />
+  ```
+
+## 那些类型的输入框默认会对用户输入的内容进行前端校验
+
+- 日期时间类：date month week time
+- 颜色选择类：color
+- 数字输入类：number
+- 电话号码类：tel
+- 文件选择类：file
+- 邮箱输入类：email
+- 网址输入类：url
+
+## 多行文本框和单行文本框的区别是什么
+
+- [可替换元素](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element)：
+  - textarea是可替换元素，规范中未列举，有固定的宽度和高度
+  - input是可替换元素，拥有固定的宽度和高度
+    - 通常认为，type为image时为可替换元素，其他类型时不是
+- 自闭合标签：textarea不是自闭合标签，input是自闭合标签
+- 值：textarea的值在标签中间，input的值通过value设置
+- 属性：
+  - textarea支持私有属性
+    - rows和cols用于设置高度和宽度
+    - wrap指定文本的换行方式：hard（自动插入换行符） soft（不自动插入换行符）
+  - input支持私有属性type切换不同表单控件
+- 换行符`n\`和回车符`\r`
+  - `<textarea>`的值和`placeholder`支持`&#10;`换行符`&#13;`回车符
+  - `<input>`的`value`和`placeholder`不支持`&#10;`换行符`&#13;`回车符
+
+## HTML下拉框有哪两种实现方式
+
+- 使用select搭配option实现
+
+  ```js
+  <select>
+    <option value="选项 1">选项 1</option>
+    <option value="选项 2">选项 2</option>
+    <option value="选项 3">选项 3</option>
+  </select>
+  ```
+
+- 使用input+datalist+option实现设置list属性关联datalist的id
+
+  ```js
+    <input type="text" list="datalist" name="datalist" />
+    <datalist id="datalist">
+      <option value="a">a</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+    </datalist>
+  ```
+
+## 如何构建一个兼容老版本浏览器的自动补全输入框
+
