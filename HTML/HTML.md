@@ -969,3 +969,140 @@ HTML5使用`video`元素用于在文档中插入视频
 - tbody 包含表格内容的行
 - td 单元格
 - tfoot 包含表格各列汇总行
+
+## 如何让表格实现跨行或者跨列
+
+- 设置`colspan`属性，表示单元格跨列的数量
+- 设置`rowspan`属性，表示单元格跨行的数量
+
+## 如何为表格中的列设置相同的属性
+
+- 使用伪类选择器，`nth-of-type` or `nth-child`
+
+  ```js
+  // 首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从1开始排序，选择的结果为CSS伪类:nth-child括号中表达式（an+b）匹配到的元素集合（n=0，1，2，3...）
+  td:nth-child(2n+1) // 奇数行
+  td:thh-child(odd) // 奇数行
+  td:thh-child(2n) // 偶数行
+  td:thh-child(even) // 偶数行
+  td:thh-child(even) // 偶数行
+  ```
+
+  ```js
+  // 针对具有一组兄弟节点的标签, 用 n 来筛选出在一组兄弟节点的位置
+  td:nth-of-type(2n+1)
+  ```
+
+  - 使用列表分组标签`colgroup`和~`col`
+
+## 如何为表格增加标题
+
+使用`<caption>`标签
+
+## 表格结构标签有哪些，为什么要使用结构标签
+
+表格的结构标签有`<thead>` `<tbody>` `<tfoot>` 分别对应表头，正文，页脚（最后一行）
+
+作用
+
+- 定义表格更加结构化，便于维护、数据标记和识别
+- 便于布局，表头（首行）和页脚（最后一行）可以独立于正文布局，利于大数据展示和打印
+- 便于应用样式，可以使用 CSS 标签选择器，单独对表头、页脚和正文设置不同的样式
+
+## 如何定义表格的列标题和行标题
+
+设置表头单元格 `<th>` 的 `scope` 属性
+
+- `scope="col"` 列标题
+- `scope="colgroup"` 跨列标题
+- `scope="row"` 行标题
+- `scope="rowgroup"` 跨行标题
+
+## 如何精确设置表格标题和单元格之间的联系
+
+- 设置表头单元格 `<th>` 的 id 属性，添加唯一 id
+- 设置单元格 `<td>` 的 headers 属性，包含从属于标题的表头单元格的 id 空格分隔
+
+  ```js
+  <table>
+    <caption>表格标题</caption>
+    <thead>
+      <tr><th id="colgroup_1">列标题 1</th><th colspan="2" id="colgroup_2">跨列标题 2 - 3</th></tr>
+      <tr><th id="col_1">列标题 1</th><th id="col_2">列标题 2</th><th id="col_3">列标题 3</th></tr>
+    </thead>
+    <tbody>
+      <tr><th id="row_1">行标题</th><td headers="colgroup_2 col_2 row_1">2</td><td headers="colgroup_2 col_3 row_1">3</td></tr>
+      <tr><th rowspan="2" id="row_2">跨行标题</th><td headers="colgroup_2 col_2 row_2">2</td><td headers="colgroup_2 col_3 row_2">3</td></tr>
+      <tr><td headers="colgroup_2 col_2 row_2">2</td><td headers="colgroup_2 col_3 row_2">3</td></tr>
+      <tr><td headers="colgroup_1 col_1">1</td><td headers="colgroup_2 col_2">2</td><td headers="colgroup_2 col_3">3</td></tr>
+      <tr><td headers="colgroup_1 col_1">1</td><td headers="colgroup_2 col_2">2</td><td headers="colgroup_2 col_3">3</td></tr>
+    </tbody>
+  </table>
+  ```
+
+## 什么是HTML表单
+
+HTML表单负责数据采集，收集的数据被发送到Web服务器，由三个基本部分组成
+
+- 表单标签
+  - 处理表单数据所需URL
+  - 提交到服务器的方法和编码
+- 表单域
+  - 有多个表单部件组成
+  - 用户填写信息的区域
+- 表单按钮
+  - 提交按钮、重置按钮、一般按钮
+  - 用于发送数据或重置用户输入的内容
+
+## 如何设置input和textarea的初始值
+
+- `input`标签使用`value`属性设置初始值
+- `textarea`标签使用替换文本设置初始值(placeholder或者标签内文本)
+
+## button有哪几种类型
+
+三种`type`
+
+- submit，以表单标签声明的方法和编码，提交表单数据到form标签action属性定义的URL
+- reset，将表单域中的表单不见重新设置默认值
+- button，适用于js构建定制按钮
+
+## 使用input和button生成的按钮有什么不同
+
+- input生成的按钮：
+  - value同时设置显示值和提交值，只支持纯文本
+  - type支持button submit reset三种基本按钮类型
+    - 还支持单选radio 复选checkbox 颜色选择color 带图像的提交按钮image 稳健选择按钮file
+  - 兼容性好
+- button生成的按钮
+  - value设置提交值，只支持纯文本
+  - 开始标签和结束标签之间的替换内容支持HTML也支持伪元素
+  - type支持button submit reset三种基本形态的按钮
+    - 也支持menu
+
+## 那些表单属性与向Web服务器发送数据有关
+
+- `<form>`的以下属性
+  - action属性，设置表单提交URL，能被提交按钮的formaction属性覆盖
+  - method属性，设置HTTP方式提交表单的方法
+    - post 表单数据包含在请求体内发送给服务器
+    - get 表单数据以查询字符串的方式拼接在URL中，用？作为分隔符
+    - dialog 表单在`<dialog>`中，提交时关闭对话框
+  - enctype属性设置提交表单服务器MIME类型，能够北提交按钮的formenctype属性覆盖
+    - application/x-www-form-urlencoded 未指定属性时的默认值
+    - multipart/form-data 表单域中包含文件上传部件时使用
+    - text/plain 用于 HTML5 调试
+- 表单部件的以下属性
+  - name，表单控件的名称，提交键值对的键名
+  - value，表单控件的值，提交的兼职对的键值
+
+## 表单元素一定要用form包裹吗，不包裹会怎么样
+
+不一定要用form包裹
+
+- HTML5 支持表单元素的 form 属性
+  - 显式地将不在表单中的元素与表单绑定
+  - IE 浏览器及老版本的现代浏览器不支持该属性
+- 不包裹，也没有设置 form 属性
+  - 表单元素除默认行为外，不会有与表单定义的验证或与 Web 服务器的交互行为
+  - 需要使用 JavaScript 定义它们的行为

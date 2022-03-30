@@ -169,5 +169,70 @@
         >mdn</a
       >
     </div>
+    <div id="col">
+      <h2>col和colgroup</h2>
+      <table border="1">
+        <colgroup>
+          <col style="background-color: red" />
+          <col style="background-color: green" />
+          <col style="background-color: yellow" />
+        </colgroup>
+        <tr>
+          <th>ISBN</th>
+          <th>Title</th>
+          <th>Price</th>
+        </tr>
+        <tr>
+          <td>3476896</td>
+          <td>My first HTML</td>
+          <td>$53</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h2>设置行标题和列标题</h2>
+      <table>
+        <caption>
+          表格标题
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">列标题 1</th>
+            <th colspan="2" scope="colgroup">跨列标题 2-3</th>
+          </tr>
+          <tr>
+            <th scope="col">列标题 1</th>
+            <th scope="col">列标题 2</th>
+            <th scope="col">列标题 3</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">行标题</th>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <th rowspan="2" scope="rowgroup">跨行标题</th>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
