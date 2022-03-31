@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        color: yellow;
+        border: 1px solid red;
+        background-color: red;
+      }
+      button:nth-of-type(2) {
+        all: initial; /* 清空按钮的样式 */
+        color: blue;
+      }
+      button:last-of-type {
+        all: revert; /* 保留按钮的默认样式 */
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>all:initial</h2>
+      <button>按钮1</button>
+      <button>按钮2</button>
+      <button>按钮3</button>
+      <hr />
+    </div>
+  </body>
+</html>
