@@ -20,6 +20,16 @@
         color: blue;
       }
     </style>
+    <style>
+      #flex {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      #flex div {
+        background-color: red;
+      }
+    </style>
   </head>
   <body>
     <div>
@@ -27,7 +37,14 @@
       <button>按钮1</button>
       <button>按钮2</button>
       <button>按钮3</button>
-      <hr />
     </div>
+    <hr />
+    <div id="flex">
+      <h2>flex布局</h2>
+      <div>flex布局</div>
+      <div>flex布局</div>
+      <div>flex布局</div>
+    </div>
+    <hr />
   </body>
 </html>
