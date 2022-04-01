@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .modal {
+        display: none;
+        overflow: auto;
+        margin: auto;
+        position: fixed;
+        width: 50vw;
+        height: 50vh;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #efefef;
+      }
+      .content,
+      .list {
+        height: 100vh;
+        background-image: linear-gradient(to bottom, #efefef, #000);
+      }
+      .list {
+        height: 200vh;
+      }
+      .open,
+      .close {
+        position: fixed;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="open">打开</div>
+    <div class="list"></div>
+    <div class="modal">
+      <div class="close">关闭</div>
+      <div class="content"></div>
+    </div>
+    <script>
+      var openBt = document.querySelector(".open"),
+        closeBt = document.querySelector(".close"),
+        modal = document.querySelector(".modal"),
+        list = document.querySelector(".list"),
+        scrollTop = 0;
+      openBt.onclick = function () {
+        scrollTop =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        modal.style.display = "block";
+        list.style.cssText =
+          "position: fixed; width: 100%; top: -" + scrollTop + "px";
+      };
+      closeBt.onclick = function () {
+        modal.style.display = "none";
+        list.style.cssText = "position: static;";
+        window.scroll({ top: scrollTop });
+      };
+    </script>
+  </body>
+</html>

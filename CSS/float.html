@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box::after {
+        /** 清除浮动 **/
+        content: "　";
+        display: block;
+        clear: both;
+        /** 隐藏 **/
+        visibility: hidden;
+        width: 0;
+        height: 0;
+        /** 隐藏：兼容IE低版本 **/
+        line-height: 0;
+      }
+      .margin-top {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="margin-top"></div>
+
+    
+  </body>
+</html>
