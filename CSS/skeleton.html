@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes skeleton-anime {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+      .skeleton {
+        position: relative;
+        overflow: hidden;
+      }
+      .skeleton::before,
+      .skeleton::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #efefef;
+      }
+      .skeleton::after {
+        background-image: linear-gradient(-75deg, #efefef, white 30%, #efefef);
+        animation: skeleton-anime 1s infinite;
+        opacity: 0.3;
+      }
+      .avater {
+        float: left;
+        margin-right: 2px;
+        width: 100px;
+        height: 100px;
+      }
+      .title,
+      .des {
+        height: 48px;
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="avater skeleton"></div>
+    <div class="title skeleton"></div>
+    <div class="des skeleton"></div>
+  </body>
+</html>
