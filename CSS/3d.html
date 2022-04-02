@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        perspective: 1px;
+        height: 30vh;
+        overflow: auto;
+      }
+      .box {
+        height: 40vh;
+      }
+      .cell1,
+      .cell2,
+      .cell3 {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin-top: 90px;
+      }
+      .cell1 {
+        background-color: pink;
+        transform: translateZ(0px);
+      }
+      .cell2 {
+        background-color: skyblue;
+        transform: translateZ(-1px);
+      }
+      .cell3 {
+        background-color: lightcyan;
+        transform: translateZ(-2px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box">
+        <div class="cell1"></div>
+        <div class="cell2"></div>
+        <div class="cell3"></div>
+      </div>
+    </div>
+  </body>
+</html>
