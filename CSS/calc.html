@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .calculator {
+        padding: 30px;
+        width: 460px;
+        background-color: #efefef;
+        font-size: 28px;
+        color: #333;
+      }
+      .btns {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(4, 108px);
+        grid-template-rows: repeat(5, 66px);
+        grid-gap: 10px;
+      }
+      .btn {
+        cursor: pointer;
+        text-align: center;
+        line-height: 66px;
+        border-radius: 3px;
+        background-color: white;
+      }
+      .btn:first-child {
+        background-color: pink;
+      }
+      .btn:nth-of-type(2) {
+        background-color: transparent;
+      }
+      .btn:nth-last-of-type(2) {
+        grid-column: 1/4;
+      }
+      .btn:last-child {
+        background-color: skyblue;
+      }
+      .btn:hover {
+        opacity: 0.65;
+      }
+      .echo {
+        margin-bottom: 30px;
+        width: 460px;
+        height: 66px;
+        line-height: 66px;
+        font-size: 30px;
+        text-align: right;
+        border-bottom: 1px solid white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div class="calculator">
+        <div class="echo" v-text="echo"></div>
+        <ul class="btns">
+          <li
+            class="btn"
+            v-for="btn in btns"
+            v-text="btn"
+            @click="cal(btn)"
+          ></li>
+        </ul>
+      </div>
+    </div>
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.12/vue.min.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          echo: "",
+          btns: [
+            "c",
+            "",
+            ".",
+            "+",
+            "7",
+            "8",
+            "9",
+            "-",
+            "4",
+            "5",
+            "6",
+            "*",
+            "1",
+            "2",
+            "3",
+            "/",
+            "0",
+            "=",
+          ],
+        },
+        methods: {
+          cal(v) {
+            switch (v) {
+              case "=":
+                this.echo = eval(this.echo.toString().replace(/\.+/g, "."));
+                break;
+              case "c":
+                this.echo = "";
+                break;
+              default:
+                this.echo += v;
+            }
+          },
+        },
+      });
+    </script>
+     
+  </body>
+</html>

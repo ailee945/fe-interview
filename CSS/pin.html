@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body > div {
+        margin: 5px 0;
+      }
+      div div,
+      .table td {
+        height: 50px;
+      }
+      div:first-child,
+      .table thead td {
+        line-height: 50px;
+        text-align: center;
+        font-size: 16px;
+        background-color: pink;
+        color: white;
+      }
+      div:nth-child(2),
+      .table tbody td:first-child {
+        background-color: skyblue;
+      }
+      div:last-child,
+      .table tbody td:last-child {
+        background-color: lightcyan;
+      }
+      /** 浮动布局 **/
+      .float {
+        display: flow-root;
+      }
+      .float div:first-child ~ div {
+        float: left;
+        width: 50%;
+      }
+      /** 内联块布局 **/
+      .inline-block {
+        font-size: 0px;
+      }
+      .inline-block div:first-child ~ div {
+        display: inline-block;
+        width: 50%;
+      }
+      /** 表格布局 **/
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      /** 弹性布局 **/
+.flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .flex div:first-child {
+        width: 100%;
+      }
+      .flex div:first-child ~ div {
+        width: 50%;
+      }
+      /** 网格布局 **/
+.grid {
+        display: grid;
+      }
+      .grid div:first-child {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float">
+      <div>float</div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="inline-block">
+      <div>inline-block</div>
+      <div></div>
+      <div></div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <td colspan="2">table</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="flex">
+      <div>flex</div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="grid">
+      <div>grid</div>
+      <div></div>
+      <div></div>
+    </div>
+  </body>
+</html>
