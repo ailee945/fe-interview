@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+    }
+  </style>
+  <style>
+    #colums {
+      columns: 3;
+      word-break: break-all;
+      background-color: skyblue;
+    }
+  </style>
+  <style>
+    #table-content {
+      width: 100%;
+      height: 500px;
+      border-collapse: collapse;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    #table-left {
+      width: 150px;
+      background-color: yellow;
+    }
+
+    #table-middle {
+      background-color: skyblue;
+    }
+
+    #table-right {
+      width: 200px;
+      background-color: yellow;
+    }
+  </style>
+  <style>
+    #flex {
+      display: flex;
+      height: 100px;
+    }
+
+    #flex-left,
+    #flex-right {
+      width: 100px;
+      background-color: skyblue;
+    }
+
+    #flex-middle {
+      flex: 1;
+    }
+  </style>
+  <style>
+    .content {
+      display: grid;
+      grid-template-columns: 200px auto 150px;
+      height: 500px;
+      line-height: 500px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .left {
+      background-color: skyblue;
+    }
+
+    .center {
+      background-color: mediumturquoise;
+    }
+
+    .right {
+      background-color: lightsteelblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="colums">
+    OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+  </div>
+  <hr />
+  <div id="table">
+    <table id="table-content">
+      <tbody>
+        <tr>
+          <td id="table-left">left</td>
+          <td id="table-middle">middle</td>
+          <td id="table-right">right</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr>
+  <div id="flex">
+    <div id="flex-left">left</div>
+    <div id="flex-middle">middle</div>
+    <div id="flex-right">right</div>
+  </div>
+  <hr>
+  <div>
+    <div class="content">
+      <div class="left">left</div>
+      <div class="center">center</div>
+      <div class="right">right</div>
+    </div>
+</body>
+
+</html>
