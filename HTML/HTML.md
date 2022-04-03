@@ -57,6 +57,7 @@ HTML 语义化的好处包括
 - 可读性，可访问性和 SEO，使用语义化标签不是必须的
 - 部分语义化标签存在兼容性问题，如 `<button>`的默认 type不总为 submit 等
 - 滥用列表标签，会增加不必要的嵌套，增加额外的 CSS Reset 的样式
+
   HTML 语义化以外，良好的命名，简明扁平的结构，良好的无障碍设计，清晰的导航和分区，一定程度上，也能弥补语义的欠缺，提升代码的机器阅读体验，降低抓取难度，提高索引权重
 
 ## 连续空格如何渲染，意义是什么
@@ -72,42 +73,43 @@ HTML 语义化的好处包括
 
 ## 哪些字符集编码支持简体中文，如何解决 HTML 乱码问题 ？
 
-1. 支持简体中文的字符集编码
-   - GB 2312
-     - 共收录 6763 个汉字，其中一级汉字 3755 个，二级汉字 3008 个，同时收录拉丁字母、希腊字母、日文平假名和片假名字母、俄语西里尔字母在内 682 个字符
-     - 使用区位码“分区”，每区含有 94 个汉字 / 符号
-       - 01 - 09 区为特殊符号
-       - 16 - 55 区为一级汉字，按拼音排序
-       - 56 - 87 区为二级汉字，按部署 / 笔画排序
-     - 无法处理人名、古汉语中的罕用字和繁体字
-   - GBK
-     - 汉字内码扩展规范
-     - 拓展 GB 2312 - 80，拥有 23940 个码位，包括 21003 个汉字，883 个图形符号
-     - 兼容 BG 2312 - 80，支持 希腊字母、俄语字母，不支持韩国字
-   - GB 18030
-     - 国家标准 GB 18030 - 2005
-     - 多字节编码，编码空间可定义 161 万个字元，包括 70244 个汉字
-     - 完全兼容 GB 2312，基本兼容 GBK，支持少数民族文字、繁体汉字和日韩汉字
-   - BIG5
-     - 大五码、五大码
-     - 支持 13060 个中文文字
-   - Unicode
-     - 万国码，国际码，统一码或单一码
-     - 采用 ISO 10646 通用字符集，应用 UCS-2 使用 16 位编码空间，支持 65536 个字符
-     - Unicode 转换格式即 UTF，UTF-8、UTF-16、UTF-32 是将数字转换到程序数据的编码方案
-   - UTF-8
-     - 多字节编码，针对 Unicode 的可变长度字符编码
-       使用 1 到 6 字节为每字符编码，实际最多 4 字节
-       - 1 字节编码：ASCII 字符
-       - 2 字节编码：带附加符号的拉丁文、希腊文、西里尔字母、亚美尼亚语、希伯来文、阿拉伯文、叙利亚文等字母
-       - 3 字节编码：其他基本多文种平面（BMP）中字符（包含大部分常用字，汉字）
-       - 4 字节编码：其他极少使用 Unicode 辅助平面的字符，如 Emoji 字符
-   - UTF-16
-     - 介于 UT F-8 和 UTF-32 间，使用 2 字节或 4 字节存储，长度既固定又可变
-   - UTF-32
-     - 固定长度的编码方案，不管字符编号大小，始终使用 4 字节存储
+支持简体中文的字符集编码
 
-2. 如何解决 HTML 汉字乱码问题
+- GB 2312
+  - 共收录 6763 个汉字，其中一级汉字 3755 个，二级汉字 3008 个，同时收录拉丁字母、希腊字母、日文平假名和片假名字母、俄语西里尔字母在内 682 个字符
+  - 使用区位码“分区”，每区含有 94 个汉字 / 符号
+    - 01 - 09 区为特殊符号
+    - 16 - 55 区为一级汉字，按拼音排序
+    - 56 - 87 区为二级汉字，按部署 / 笔画排序
+  - 无法处理人名、古汉语中的罕用字和繁体字
+- GBK
+  - 汉字内码扩展规范
+  - 拓展 GB 2312 - 80，拥有 23940 个码位，包括 21003 个汉字，883 个图形符号
+  - 兼容 BG 2312 - 80，支持 希腊字母、俄语字母，不支持韩国字
+- GB 18030
+  - 国家标准 GB 18030 - 2005
+  - 多字节编码，编码空间可定义 161 万个字元，包括 70244 个汉字
+  - 完全兼容 GB 2312，基本兼容 GBK，支持少数民族文字、繁体汉字和日韩汉字
+- BIG5
+  - 大五码、五大码
+  - 支持 13060 个中文文字
+- Unicode
+  - 万国码，国际码，统一码或单一码
+  - 采用 ISO 10646 通用字符集，应用 UCS-2 使用 16 位编码空间，支持 65536 个字符
+  - Unicode 转换格式即 UTF，UTF-8、UTF-16、UTF-32 是将数字转换到程序数据的编码方案
+- UTF-8
+  - 多字节编码，针对 Unicode 的可变长度字符编码
+   使用 1 到 6 字节为每字符编码，实际最多 4 字节
+    - 1 字节编码：ASCII 字符
+    - 2 字节编码：带附加符号的拉丁文、希腊文、西里尔字母、亚美尼亚语、希伯来文、阿拉伯文、叙利亚文等字母
+    - 3 字节编码：其他基本多文种平面（BMP）中字符（包含大部分常用字，汉字）
+    - 4 字节编码：其他极少使用 Unicode 辅助平面的字符，如 Emoji 字符
+- UTF-16
+  - 介于 UT F-8 和 UTF-32 间，使用 2 字节或 4 字节存储，长度既固定又可变
+- UTF-32
+  - 固定长度的编码方案，不管字符编号大小，始终使用 4 字节存储
+
+如何解决 HTML 汉字乱码问题
 
 HTML 汉字乱码的原因：
 
@@ -128,7 +130,6 @@ HTML 汉字乱码的原因：
 - 什么是HTML5：HTML5 是定义 HTML 标准的最新版本，具有两个不同的概念：
   - HTML5 是一个新版本的 HTML 语言，具有新的元素，属性和行为
   - HTML5 有更大的技术集，允许构建多样化和更强大的网站和应用程序
-
 - 新特性
   - 语义化：能够更恰当的描述内容是什么
     - 新的区块元素和段落元素：`<section>` `<artical>` `<header>` `nav` `<footer>` `<aside>` `<hgroup>`；嵌入和允许操作的新多媒体内容`<audio>` `<video>`
@@ -139,12 +140,10 @@ HTML 汉字乱码的原因：
       - <> mark figure data time progress meter main output
     - `<iframe>`的改进：精准控制iframe元素的安全级别和期望的渲染：`sandbox` `srcdoc`
     - `<MathML>`用于描述数学公式
-
   - 连通性：通过创新的技术方法进行通信
     - Web Sockets：允许页面和服务器之间建立持久链接，并交换非HTML数据[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/WebSockets_API)
     - Server-sent events：允许服务器向客户端推送事件[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Server-sent_events)
     - WebRTC: 支持浏览器客户端之间语音视频交流和数据分享的技术；浏览器原生支持点对点的分享应用数据和进行电话会议[MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API)
-
   - 离线 & 存储：能够让网页在客户端本地存储数据并且更高效地离线运行
     - 离线资源：应用程序缓存`.manifest`上的资源，离线或资源没有更新时，浏览器会加载缓存的离线资源
     - 在线和离线事件
@@ -172,7 +171,6 @@ HTML 汉字乱码的原因：
           - `this.files`
         - 通过 drogenter dragover drag 的 dataTransfer 的 files 中获取文件列表
         - 对象 URL window.URL.createObjectURL() 和 window.URL.revokeObjectURL()
-
   - 多媒体：加快普及video和audio应用，丰富Web表现力
     - HTML5 音视频
       - `<video>` 和 `<audio>` 标签以及 JavaScript 和 APIs 用于对其进行控制
@@ -185,7 +183,6 @@ HTML 汉字乱码的原因：
 
       - `<track>` 元素怒被当作媒体元素 `<audio>` 和 `<video>` 的子元素
       - WebVTT（Web 视频文本跟踪格式）使用 `<track>` 元素现实定时文本轨道（如字幕或标题）的格式化，支持 VTTCue 和 VTTRegion 接口
-
   - 2D/3D绘图效果：提供定制图形、动画界面的新选择
     - Canvas
       - `<canvas>` 元素被用来通过 JavaScript （Canvas API 或 WebGL API）绘制图形及图形动画
@@ -200,7 +197,6 @@ HTML 汉字乱码的原因：
         - SVG （可缩放矢量图形）是一种描述二维的矢量图形，基于 XML 的标记语言
         - 优雅而简洁地渲染不同大小的图形，并和 CSS，DOM，JavaScript 和 SMIL 等其他网络标准无缝衔接
         - 可以搜索、索引、编写脚本和压缩，也可以使用任何文本编辑器和绘图软件来创建和编辑 SVG
-
   - 性能&集成：提供作用显著的性能优化方案，更有效的使用和设备硬件
     - Web Workers
       - 为 Web 内容在后台线程中运行脚本提供一种简单方法
@@ -394,7 +390,6 @@ HTML 头部元素，即 `<head>` 元素
   - meta 元素提供的是文档级别（document-level）的元数据，应用于整个页面
   - meta 指定了元素的类型，说明该元素包含了什么类型的信息
   - 与 content 一起使用，后者指定实际的元数据内容，用来添加 author description 用于提交作者、摘要和 SEO
-
 - 设置了http-equiv属性
   - meta 元素则是编译指令，提供的信息与类似命名的 HTTP 头部相同
   - content-security-policy
@@ -410,7 +405,6 @@ HTML 头部元素，即 `<head>` 元素
   - refresh
     - content 只包含一个正整数，则为重新载入页面的时间间隔（秒）
     - content 包含一个正整数，并且后面跟着字符串 ;ulr= 和一个合- 法的 URL，则是重定向到指定链接的时间间隔（秒）
-
 - 设置了charset属性
   - meta 元素是一个字符集声明，告诉文档使用哪种字符编码
   - 值与 ASCII 大小写（ASCII case-insensitive）无关，如 utf-8
@@ -554,7 +548,7 @@ u b i, 不建议使用，使用css管理样式更加灵活、便与性能优化�
 
 ## 无语义元素有哪些，什么时候使用
 
-- `div` 和 `span` 以及 表象元素i, b, u
+`div` 和 `span` 以及 表象元素i, b, u
 
 ## 什么是可替换元素，为什么称之为可替换元素
 
@@ -579,6 +573,7 @@ u b i, 不建议使用，使用css管理样式更加灵活、便与性能优化�
 - `width=device-width` 宽度是设备屏幕的宽度
 
   常用于移动端自适应布局，并与以下设置项搭配使用：
+
   - `initial-scale=1.0` 表示初始缩放比例 1.0
   - `minimum-scale=1.0` 表示最小缩放比例 1.0
   - `maximum-scale=1.0` 表示最大缩放比例 1.0
@@ -720,21 +715,21 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 - 使用图片的 title标签配合祖先标题描述图片
 - 使用 `<div>`和`<p>`组合
 
-```js
-<div>
-  <img>
-  <p>图片说明文字</p>
-</div>
-```
+  ```html
+  <div>
+    <img>
+    <p>图片说明文字</p>
+  </div>
+  ```
 
 - 使用 `<figure>` 和 `<figcaption>` 组合
 
-```js
-<figure>
-  <img>
-  <figcaption>图片说明文字</figcaption>
-</figure>
-```
+  ```html
+  <figure>
+    <img>
+    <figcaption>图片说明文字</figcaption>
+  </figure>
+  ```
 
 ## HTML图像和CSS图像什么区别
 
@@ -811,11 +806,10 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
     - 除非 SVG 和您当前的网页具有相同的 origin
     - 否则不能在主页面上使用 JavaScript 来操纵 SVG
 
-## 为什么要使用相应式图片
+## 为什么要使用响应式图片
 
 - 美术设计问题：宽窄屏幕
 - 分辨率切换问题：宽窄屏幕
-  
 - 使用相同显示效果的图片，但包含不同分辨率，切换不同分辨率照片
 - 实用不同显示效果的图片，剪裁照片的不同部分
 
@@ -823,7 +817,7 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 
 - 装饰性图片 `image-set`支持声明一组图像的地址，分辨率，和type
   
-  ```js
+  ```cs
   background-image: image-set("1x.png" 1x, "2x.png" 2x, "3x.png" 3x)
   @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 264dpi) {
   /* 高分辨率下,如 iPad 2 的背景图 */
@@ -834,7 +828,7 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 - 非装饰性图片
   - 添加meta标签，强制浏览器，特别是手机浏览器以设备宽度来加载网页
   
-  ```js
+  ```html
   <meta name="viewport" content="width=device-width">
   ```
 
@@ -887,7 +881,7 @@ HTML5使用`video`元素用于在文档中插入视频
 - MPEG-4即MP4格式
 - WebM
 
-视频
+音频
 
 - MPEG Audio Layer 3 即 MP3 格式
 
@@ -979,17 +973,17 @@ HTML5使用`video`元素用于在文档中插入视频
 
 - 使用伪类选择器，`nth-of-type` or `nth-child`
 
-  ```js
-  // 首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从1开始排序，选择的结果为CSS伪类:nth-child括号中表达式（an+b）匹配到的元素集合（n=0，1，2，3...）
-  td:nth-child(2n+1) // 奇数行
-  td:thh-child(odd) // 奇数行
-  td:thh-child(2n) // 偶数行
-  td:thh-child(even) // 偶数行
-  td:thh-child(even) // 偶数行
+  ```css
+  /* 首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从1开始排序，选择的结果为CSS伪类:nth-child括号中表达式（an+b）匹配到的元素集合（n=0，1，2，3...） */
+  td:nth-child(2n+1) /* 奇数行 */
+  td:thh-child(odd) /* 奇数行 */
+  td:thh-child(2n) /* 偶数行 */
+  td:thh-child(even) /* 偶数行 */
+  td:thh-child(even) /* 偶数行 */
   ```
 
-  ```js
-  // 针对具有一组兄弟节点的标签, 用 n 来筛选出在一组兄弟节点的位置
+  ```css
+  /* 针对具有一组兄弟节点的标签, 用 n 来筛选出在一组兄弟节点的位置 */
   td:nth-of-type(2n+1)
   ```
 
@@ -1023,7 +1017,7 @@ HTML5使用`video`元素用于在文档中插入视频
 - 设置表头单元格 `<th>` 的 id 属性，添加唯一 id
 - 设置单元格 `<td>` 的 headers 属性，包含从属于标题的表头单元格的 id 空格分隔
 
-  ```js
+  ```html
   <table>
     <caption>表格标题</caption>
     <thead>
@@ -1121,7 +1115,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 - 可设置form属性，用于将其中的一组元素于指定表单关联
 - 可设置disable属性，用于禁用其中不在`<legend>`的表单元素
 
-  ```js
+  ```html
   <form>
     <fieldset>
       <legend>health information</legend>
@@ -1160,7 +1154,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
   - 语义结构清晰
   - 避免部分屏幕阅读器不支持
 
-  ```js
+  ```html
     <label for="name">
       姓名:
       <abbr title="required">*</abbr>
@@ -1190,7 +1184,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 - 使用email类型的input
 
-  ```js
+  ```html
     <form action="">
       <input type="email" multiple />
       <button>submit</button>
@@ -1200,7 +1194,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 - 使用text类型的input，增加正则校验
   
-  ```js
+  ```html
   <input
     type="text"
     pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+)+([,]\s*([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9\-]+\.)+([a-zA-Z0-9\-\.]+))*$"
@@ -1239,7 +1233,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 - 使用select搭配option实现
 
-  ```js
+  ```html
   <select>
     <option value="选项 1">选项 1</option>
     <option value="选项 2">选项 2</option>
@@ -1249,7 +1243,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 - 使用input+datalist+option实现设置list属性关联datalist的id
 
-  ```js
+  ```html
     <input type="text" list="datalist" name="datalist" />
     <datalist id="datalist">
       <option value="a">a</option>
@@ -1262,23 +1256,23 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 可以在datalist标签中嵌入select和option标签，当datalist不被支持时展示下拉选项，提供用户手动输入内容的第二选择
 
-  ```js
-  <label for="colorInput">What is your favorite color ?</label>
-  <input type="text" id="colorInput" list="colorList">
-  <dataList id="colorList">
-    <label for="colorSuggestion">or pcik a color</label>
-    <select>
-      <option>Blue</option>
-      <option>Red</option>
-      <option>Orange</option>
-      <option>Green</option>
-      <option>Yellow</option>
-      <option>Pink</option>
-      <option>Purple</option>
-      <option>White</option>
-    </select>
-  </dataList>
-  ```
+```html
+<label for="colorInput">What is your favorite color ?</label>
+<input type="text" id="colorInput" list="colorList">
+<dataList id="colorList">
+  <label for="colorSuggestion">or pcik a color</label>
+  <select>
+    <option>Blue</option>
+    <option>Red</option>
+    <option>Orange</option>
+    <option>Green</option>
+    <option>Yellow</option>
+    <option>Pink</option>
+    <option>Purple</option>
+    <option>White</option>
+  </select>
+</dataList>
+```
 
 ## 如何构建单选框，如何构建复选框
 
@@ -1511,7 +1505,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
   - 保持跨平台一致性
     - 字体和文本大小：继承父级元素的 CSS，而不使用系统默认样式
 
-      ```js
+      ```css
       button, input, select, textarea {
       font-family: inherit;
       font-size: 100%;
@@ -1520,7 +1514,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
       - 盒子模型：保持相同的宽度和高度
 
-        ```js
+        ```css
         button, input, select, textarea {
         -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
