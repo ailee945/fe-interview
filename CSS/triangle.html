@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .spec-top::before {
+        content: "▲";
+      }
+      .spec-right::before {
+        content: "▶";
+      }
+      .spec-bottom::before {
+        content: "▼";
+      }
+      .spec-left::after {
+        content: "◀";
+      }
+    </style>
+    <style>
+      div:nth-of-type(5),
+      div:nth-of-type(6),
+      div:nth-of-type(7),
+      div:nth-of-type(8) {
+        float: left;
+        margin-right: 6px;
+        font-size: 20px;
+        font-family: "宋体";
+        overflow: hidden;
+      }
+      .r-top {
+        text-indent: -10px;
+        transform: rotate(-90deg);
+      }
+      .r-right {
+        text-indent: -10px;
+      }
+      .r-bottom {
+        width: 10px;
+        transform: rotate(-90deg);
+      }
+      .r-left {
+        width: 10px;
+      }
+    </style>
+    <style>
+      .div {
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+      }
+      .top {
+        border-top-color: black;
+      }
+      .right {
+        border-right-color: black;
+      }
+      .bottom {
+        border-bottom-color: black;
+      }
+      .left {
+        border-left-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>特殊符号</h2>
+    <div class="spec-top"></div>
+    <div class="spec-right"></div>
+    <div class="spec-bottom"></div>
+    <div class="spec-left"></div>
+    <hr />
+    <h2>特殊符号+缩进+溢出+旋转</h2>
+    <div class="r-top">◆</div>
+    <div class="r-right">◆</div>
+    <div class="r-bottom">◆</div>
+    <div class="r-left">◆</div>
+    <br />
+    <hr />
+    <h2>边框</h2>
+    <div class="div top"></div>
+    <div class="div right"></div>
+    <div class="div bottom"></div>
+    <div class="div left"></div>
+  </body>
+</html>
