@@ -90,12 +90,13 @@ this.$nextTick() 和 Vue.nextTick 一样，不同的就是回调的 this 自动�
 
 |项目|Vue2|Vue3|
 |:---:|:---:|:---:|
-|API风格|||
-|组件生命周期|||
-|指令生命周期|||
-|数据|||
-|监听|||
-|slot|||
-|v-model|||
-|新功能|||
-|性能|||
+|API风格|Options API|Composition API|
+|组件生命周期|`beforeCreate` `created` `beforeMount` `mounted` `beforeUpdate` `updated` `beforeDestory` `destoryed` `actived` `deactived` `errorCaptured`|`onMounted()` `onUpdated()` `onUnmounted()` `onBeforeMount()` `onBeforeUpdate()` `onBeforeUnmount()` `onErrorCaptured()` `onRenderTracked()` `onRenderTriggered()` `onActivated()` `onDeactivated()` `onServerPrefetch()`
+|
+|指令生命周期|`bind` `inserted` `update` `componentUpdated` `unbind`|`beforeMount` `mounted` `beforeUpdate` `updated` `beforeMount` `unmounted`|
+|数据|`data`|`ref` `reactive`(torefs)|
+|监听|`watch`|`watch` `watchEffect`|
+|slot|slot使用插槽 slot-scope给插槽绑定数据|v-slot：插槽名给插槽绑定数据|
+|v-model|.async 绑定属性和 update:+ 属性名 事件|无需修饰|
+|新功能||Teleport Suspense（实现骨架屏） defineAsyncComponent定义异步组件 允许多个根结点|
+|性能||使用Proxy代替defineProperty相应式 标记节点类型，diff时跳过静态节点 支持ES6引入方法，按需编译 Vite|
