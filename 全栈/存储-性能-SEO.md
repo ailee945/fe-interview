@@ -130,6 +130,8 @@ const run = db => {
 }
 ```
 
+运行结果：
+
 ![res](img/indexedDB.png)
 
 ## 什么是 Web Storage API ?
