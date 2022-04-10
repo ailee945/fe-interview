@@ -41,3 +41,16 @@ const s3 = Symbol.for("abc");
 const s4 = Symbol.for("abc");
 console.log(s3===s4);
 console.log(Symbol.keyFor(s3)); // 'abc'
+
+// BingInt
+const n = Number.MAX_SAFE_INTEGER //9007199254740991
+const bigInt = 9007199254740992n
+
+
+const bigInt2 = bigInt+1n
+const bigInt3 = bigInt+BigInt(10)
+
+console.log(bigInt2)
+console.log(bigInt3)
+
+const final = new Finalization
