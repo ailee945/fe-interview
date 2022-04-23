@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #font-test {
+        font-family: "Courier New", Courier, monospace;
+      }
+      /* 自定义字体 */
+      @font-face {
+        font-family: "IF";
+        src: url("");
+      }
+      #font-custon {
+        font-family: "IF";
+      }
+      /* 网络字体 */
+      /* iconfont */
+      /* line-height */
+      span {
+        background-color: red;
+      }
+      #c1 {
+        line-height: 30px;
+      }
+      #c2 {
+        line-height: 25px;
+      }
+      .test1 {
+        font-size: 20px;
+        line-height: 0;
+        border: 1px solid #cccccc;
+        background: #eeeeee;
+      }
+      .test2 {
+        font-size: 0;
+        line-height: 20px;
+        border: 1px solid #cccccc;
+        background: #eeeeee;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="font-test">你好 hello</div>
+    <div id="custom-font">自定义字体custom</div>
+    <div id="line-heig">
+      <span id="c1">inline-box1</span>
+      <span id="c2">inline-box2</span>
+    </div>
+    <div class="test1">测试1</div>
+    <div class="test2">测试2</div>
+  </body>
+</html>
