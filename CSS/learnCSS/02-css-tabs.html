@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .tab {
+        position: relative;
+      }
+      .tab > div {
+        width: 80px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        float: left;
+        cursor: pointer;
+      }
+
+      .tab > div > div {
+        width: 320px;
+        height: 50px;
+        position: absolute;
+        top: 40px;
+        left: 0px;
+        display: none;
+      }
+      .tab > div:nth-child(1) {
+        background-color: saddlebrown;
+      }
+      .tab > div:nth-child(2) {
+        background-color: red;
+      }
+      .tab > div:nth-child(3) {
+        background-color: chartreuse;
+      }
+      .tab > div:nth-child(4) {
+        background-color: darksalmon;
+      }
+
+      .tab > div:nth-child(1) > div {
+        display: block;
+        background-color: saddlebrown;
+      }
+      .tab > div:nth-child(2) > div {
+        display: none;
+        background-color: red;
+      }
+      .tab > div:nth-child(3) > div {
+        display: none;
+        background-color: chartreuse;
+      }
+      .tab > div:nth-child(4) > div {
+        display: none;
+        background-color: darksalmon;
+      }
+      .tab > div:hover > div {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <div>
+        选项卡1
+        <div>
+          <span> 选项卡1文本... </span>
+        </div>
+      </div>
+      <div>
+        选项卡2
+        <div>
+          <span> 选项卡2文本... </span>
+        </div>
+      </div>
+      <div>
+        选项卡3
+        <div>
+          <span> 选项卡3文本... </span>
+        </div>
+      </div>
+      <div>
+        选项卡4
+        <div>
+          <span> 选项卡4文本... </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -45,11 +45,50 @@ id+100; 类、属性、伪类+10; 元素、伪元素+1; 其他选择器+0
 
 ### 2. 背景、边框
 
-- 背景颜色
-- 渐变色背景
-- 多背景叠加
-- 背景图片和属性(雪碧图)
+- 背景
+  - 背景颜色
+    - rgb hsl()
+  - 渐变色背景
+  - 多背景叠加
+  - 背景图片和属性(雪碧图)
+- 边框
+  - 属性：线型 大小 颜色
+  - 边框背景图
+  - 边框衔接(三角形)
 
 ### 3. 滚动、换行
 
+- 滚动行为和滚动条
+  - visible
+  - hidden
+  - scroll
+  - auto
+- 折行
+  - overflow-wrap 通用换行控制
+  - word-break 针对多字节文字
+  - white-space 空白处是否换行
+
 ### 4. 粗体、斜体、下划线
+
+- font-weight normal-400 bold-700 bolder\lighter实际而定
+- font-style: italic
+- text-decoration: none
+- cursor: pointer
+
+### 5. CSS hack
+
+### 6. 面试
+
+- 利用css美化checkbox
+  - label display
+- 选择器优先级
+- 雪碧图 background-position
+  - 性能
+  - 大小
+- 自定义字体
+  - 字体图标
+- base64使用
+  - 减少HTTP请求
+  - 使用小图片（体积增大）
+- 伪元素和伪类的区别
+  - 状态和元素；单冒号和双冒号
