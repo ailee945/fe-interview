@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动画</title>
+    <style>
+      /* 过渡 */
+      #transition {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        transition: all 1s ease-in-out 0.5s;
+      }
+      #transition:hover {
+        width: 100px;
+        height: 100px;
+        background-color: green;
+        transition: all 1s ease-in-out 0.5s;
+      }
+      /* 关键帧动画 */
+      #animation {
+        width: 200px;
+        height: 200px;
+        background-color: yellow;
+        animation: custom 1s ease 2s ;
+      }
+      @keyframes custom {
+        0% {
+          width: 100px;
+        }
+        50% {
+          width: 250px;
+        }
+        to {
+          width: 400px;
+        }
+      }
+      /* 不需要进行补间 */
+      #img{
+        width: 25px;
+        height: 65px;
+        background: url(./img/animation.webp);
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>补间动画</h2>
+    <div id="transition"></div>
+    <h2>关键帧动画</h2>
+    <div id="animation"></div>
+    <h2>逐帧动画</h2>
+    <div id="img"></div>
+  </body>
+</html>
