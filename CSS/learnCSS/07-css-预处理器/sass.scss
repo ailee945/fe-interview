@@ -1,0 +1,31 @@
+// 变量
+$divWidth: 100px;
+$bgColor: red;
+$borderWidth: 5px;
+
+// mixin
+@mixin border1($borderWidth){
+  border: $borderWidth, solid, black;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.d1{
+  width: 2*$divWidth;
+  height: 2*$divWidth;
+  background-color: green;
+  @include border1($borderWidth);
+  // 嵌套结构
+  .d2{
+    width: $divWidth;
+    height: $divWidth;
+    background-color: $bgColor;
+    @include border1($borderWidth);
+    &:hover{
+      background-color: white;
+    }
+  }
+}

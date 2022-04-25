@@ -1,0 +1,30 @@
+// 变量
+@divWidth: 100px;
+@bgColor: red;
+@borderWidth: 2px;
+
+// Mixin
+.border(@borderWidth){
+  border: @borderWidth solid black;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.d1{
+  width: 2*@divWidth;
+  height: 2*@divWidth;
+  background-color: @bgColor;
+  .border(@borderWidth);
+  .d2{
+    width: @divWidth;
+    height: @divWidth;
+    background-color: green;
+    .border(@borderWidth + 2px);
+    &:hover{
+      background-color: white;
+    }
+  }
+}

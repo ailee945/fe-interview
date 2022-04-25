@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.d1 {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  border: 5px, solid, black;
+}
+.d1 .d2 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border: 5px, solid, black;
+}
+.d1 .d2:hover {
+  background-color: white;
+}
+
+/*# sourceMappingURL=sass.css.map */
