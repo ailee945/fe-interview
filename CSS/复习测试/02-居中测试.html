@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>水平居中</h2>
+    <div style="text-align: center"><span>行内元素</span></div>
+    <div style="width: 500px; background-color: green">
+      <div style="margin: auto; background-color: red; width: 200px">
+        元素左右宽度固定
+      </div>
+    </div>
+    <div style="position: relative; height: 300px">
+      <div
+        style="position: absolute; width: 200px; left: 50%; margin-left: -100px"
+      >
+        absolute+transform
+      </div>
+    </div>
+    <div style="display: flex; height: 200px; justify-content: center">
+      <div class="flex" style="background-color: red; width: 50px">2</div>
+    </div>
+    <hr />
+
+    <div style="width: 100%">
+      <div style="width: 100px; float: left; background-color: blue">left</div>
+      <div style="background-color: red; float: left">right</div>
+    </div>
+    <!-- <hr />
+    <div style="position: relative; background-color: yellow; height: 200px">
+      <div style="background-color: aqua; position: absolute">left</div>
+      <div style="background-color: bisque; right: 0">right</div>
+    </div> -->
+  </body>
+</html>
