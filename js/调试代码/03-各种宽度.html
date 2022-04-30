@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        width: 100px;
+        height: 100px;
+        padding: 5px;
+        border: 5px solid red;
+        overflow: auto;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      ihfhbfhdbfhbchbchb bdfbd hfiuwehfjb rfbhsd hbdb erhhferhb rehfbhfb
+      rhjfbdshjfb hfh gh
+    </div>
+    <script>
+      const divEl = document.querySelector("div");
+      console.log("offsetHeight", divEl.offsetHeight);
+      console.log("scrollHeight", divEl.scrollHeight);
+      console.log("clientHeight", divEl.clientHeight);
+    </script>
+  </body>
+</html>
