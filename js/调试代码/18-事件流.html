@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent" style="border: 3px solid red; width: 200px; height: 200px">
+      <div id="child">2222222222</div>
+    </div>
+    <script>
+      const divEl = document.querySelector("#child");
+      const divEl2 = document.querySelector("#parent");
+      divEl.addEventListener("click", () => {
+        console.log("冒泡阶段");
+      });
+      divEl.addEventListener(
+        "click",
+        () => {
+          console.log("捕获阶段");
+        },
+        true
+      );
+      divEl2.addEventListener("click", () => {
+        console.log("冒泡阶段2");
+      });
+      divEl2.addEventListener(
+        "click",
+        () => {
+          console.log("捕获阶段2");
+        },
+        true
+      );
+    </script>
+  </body>
+</html>

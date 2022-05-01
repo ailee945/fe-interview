@@ -15,8 +15,9 @@
         height: 100px;
         padding: 5px;
         border: 5px solid red;
-        overflow: auto;
-        background: green;
+        overflow-x: auto;
+        overflow-y: hidden;
+        background: yellow;
       }
     </style>
   </head>
@@ -30,6 +31,13 @@
       console.log("offsetHeight", divEl.offsetHeight);
       console.log("scrollHeight", divEl.scrollHeight);
       console.log("clientHeight", divEl.clientHeight);
+      divEl.addEventListener("mousemove", (e) => {
+        console.log("clientX", e.clientX);
+        console.log("pageX", e.pageX);
+        console.log("ScreenX", e.screenX);
+        console.log(divEl.getBoundingClientRect());
+        console.log(divEl.offsetLeft);
+      });
     </script>
   </body>
 </html>
