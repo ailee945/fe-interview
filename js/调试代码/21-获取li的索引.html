@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <script>
+      const liEls = document.querySelectorAll("li");
+
+      // let方法
+      // for (let i = 0; i < liEls.length; i++) {
+      //   liEls[i].onclick = () => {
+      //     alert(`click${i + 1}li`);
+      //   };
+      // }
+
+      // 单独的参数保存i
+      // for (var i = 0; i < liEls.length; i++) {
+      //   liEls[i].index = i;
+      //   liEls[i].onclick = function () {
+      //     alert(this.index + 1);
+      //   };
+      // }
+
+      // var + 闭包
+      for (var i = 0; i < liEls.length; i++) {
+        liEls[i].onclick = (function (a) {
+          return function () {
+            alert(a + 1);
+          };
+        })(i);
+      }
+    </script>
+  </body>
+</html>
