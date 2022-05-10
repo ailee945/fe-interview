@@ -15,4 +15,5 @@ function foo(this: any, a: any, b: any, c: any) {
 // foo(1,2,3) // undefined, 1, 2, 3
 
 const fn = foo.bind([1], 1, 2);
-fn(3); // [1], 1, 2, 3 
+fn(3); // [1], 1, 2, 3
+export {};
