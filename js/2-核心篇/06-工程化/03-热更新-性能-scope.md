@@ -16,7 +16,7 @@
 - HMR Server 使用 webSocket 通知 HMR runtime 需要更新，HMR运行时通过 HTTP 请求更新 jsonp
 - HMR 运行时替换更新中的模块，如果确定这些模块无法更新，则触发整个页面刷新
 
-## 性能优化
+## webpack性能优化
 
 - 代码优化（无用代码消除DCE（dead code elimination））
   - UglifyJs
