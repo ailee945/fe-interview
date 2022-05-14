@@ -1,5 +1,4 @@
 function sort(array) {
-  checkArray(array);
   mergeSort(array, 0, array.length - 1);
   return array;
 }
@@ -32,3 +31,5 @@ function mergeSort(array, left, right) {
   }
   return array;
 }
+
+// 时间复杂度O(nlogn)
