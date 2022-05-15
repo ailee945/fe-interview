@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>盒模型</title>
+    <style>
+      body {
+        background: greenyellow;
+      }
+      #box1 {
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        overflow: hidden;
+        background: yellow;
+      }
+      #box2 {
+        box-sizing: border-box;
+        width: 200px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        overflow: hidden;
+        background: yellow;
+      }
+      /* 嵌套盒子 */
+      #box3 {
+        width: 300px;
+        height: 300px;
+        margin: 30px;
+        /* 解决外边框塌陷的几种方式 */
+        /* 1. 给父元素设置border */
+        /* border: 1px solid black; */
+        /* 2. 给父元素设置padding */
+        /* 注意撑大父盒子 */
+        /* padding: 5px; */
+        /* 3. 给父元素添加overflow-hidden属性 */
+        /* overflow: hidden; */
+        /* 4. 给父元素或者自元素增加浮动，使其脱离标准流 */
+        /* float: left; */
+        /* 5. 将父元素转换为行内块元素 */
+        /* display: inline-block; */
+        /* 6.给父元素或者自元素添加定位，脱离标准流 */
+        /* position: absolute; */
+        /* 7. 给父元素增加flex或者inline-flex */
+        display: flex;
+        background: red;
+      }
+      #box4 {
+        width: 200px;
+        height: 200px;
+        margin: 20px auto;
+        background: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box1">
+      <div>我是content-box</div>
+    </div>
+    <div id="box2">
+      <div>我是border-box</div>
+    </div>
+    <div id="box3">
+      <div id="box4"></div>
+    </div>
+    <div
+      style="padding: 10px; border: 5px solid blue; margin: 10px; width: 300px"
+    >
+      之前看过一篇文章，叫做《浏览器工作原理：新式网络浏览器幕后揭秘》，
+      文章言简意赅的介绍的浏览器的工作过程，web前端
+      之前看过一篇文章，叫做《浏览器工作原理：新式网络浏览器幕后揭秘》，
+      文章言简意赅的介绍的浏览器的工作过程，web前端
+    </div>
+  </body>
+</html>

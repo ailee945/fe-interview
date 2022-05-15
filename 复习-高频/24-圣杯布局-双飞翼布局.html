@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>圣杯布局</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header,
+      footer {
+        height: 50px;
+        background: red;
+        line-height: 50px;
+        text-align: center;
+      }
+      .grails::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .grails div {
+        float: left;
+        height: 200px;
+      }
+      .grails {
+        padding: 0 150px 0 200px;
+      }
+      .center {
+        width: 100%;
+        background: blue;
+      }
+      .left {
+        width: 200px;
+        margin-left: -100%;
+        position: relative;
+        left: -200px;
+        background: yellow;
+      }
+      .right {
+        width: 150px;
+        margin-left: -150px;
+        position: relative;
+        left: 150px;
+        background: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <header>圣杯布局主要是利用padding属性</header>
+      <div class="grails">
+        <div class="center">center</div>
+        <div class="left">left</div>
+        <div class="right">right</div>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
