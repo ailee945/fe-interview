@@ -1,13 +1,26 @@
 <template>
-  <VModel v-model="query" />
-  <h2>query:{{query}}</h2>
+  <h2>n1:{{ mainStore.n1 }}--n2:{{ mainStore.n2 }}</h2>
+  <button @click="clickChange">change</button>
 </template>
 
 <script setup>
-import { ref } from "vue";
-import VModel from "./VModel.vue";
+import { useMain } from "../store/main";
 
-const query = ref('')
+const mainStore = useMain();
+function clickChange() {
+//   // 写法一
+//   // mainStore.$patch((state) => {
+//   //   state.n1++;
+//   //   state.n2++;
+//   // });
+
+//   // 写法二
+//   mainStore.n1++;
+//   mainStore.n2++;
+
+//   // 写法三
+  mainStore.changeData();
+}
 </script>
 
 <style lang="scss" scoped></style>
