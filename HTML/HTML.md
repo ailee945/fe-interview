@@ -8,27 +8,27 @@ HTML，全称是 HyperText Markup Language，即超文本标记语言，它不�
 
 - “超文本”（hybertext) 是指连接单个网站或多个网站网页的链接
 - HTML 使用“标记”（markup) 来注明文本、图片和其它内容
-- HTML 通过“标签”（tag）标记元素，标签由在<和>中包裹的元素名组成
+- HTML 通过“标签”（tag）标记元素，标签由在`<`和`>`中包裹的元素名组成
 - HTML 标签里的元素名不区分大小写。可以用大写、小写或混合形式书写
 
 ## 常用的浏览器引擎
 
 浏览器是一种从 Web 获取和显示页面的程序，让用户通超链接访问更多页面
 
-排版引擎（Layout Engine），也称为浏览器引擎（Browser Engine）、页面渲染引擎（Rendering Engine）或样板引擎，它是软件组件，负责获取标记式内容（如 HTML、XML 及图像文件等）和整理信息（如 CSS 及 XSL 等），并将排版后内容输出至显示器或打印机
+排版引擎（Layout Engine），也称为`浏览器引擎`（Browser Engine）、`页面渲染引擎`（Rendering Engine）或`样板引擎`，它是软件组件，负责获取标记式内容（如 HTML、XML 及图像文件等）和整理信息（如 CSS 及 XSL 等），并将排版后内容输出至显示器或打印机
 
 常见的浏览器排版引擎分别是：
 
-- Mozilla Firefox 使用 Gecko 引擎
-- -Apple Safari 和 早期 Google Chrome 使用 KDE 引擎，后发展成为 WebKit 引擎
-- Internet Explorer 使用 Trident 引擎
-- Microsoft Edge 早期使用 EdgeHTML 引擎
-- Opera 早期使用 Presto 引擎
-- 目前，Google Chrome 及基于 Chromium 浏览器，如 Microsoft Edge，Opera 使用基于 WebKit 分支自行构建的 Blink 引擎
+- Mozilla Firefox 使用 `Gecko` 引擎
+- Apple Safari 和 早期 Google Chrome 使用 `KDE` 引擎，后发展成为 `WebKit` 引擎
+- Internet Explorer 使用 `Trident` 引擎
+- Microsoft Edge 早期使用 `EdgeHTML` 引擎
+- Opera 早期使用 `Presto` 引擎
+- 目前，Google Chrome 及基于 Chromium 浏览器，如 Microsoft Edge，Opera 使用基于 WebKit 分支自行构建的 `Blink` 引擎
 
 ## 请列举常用的 HTML 实体字符 ？
 
-字符< > " ' 和 & 等本身是 HTML 语法自身的特殊字符
+字符`<` `>` `"` `'` 和 `&` 等本身是 HTML 语法自身的特殊字符
 
 表示其本身需要使用字符引用，即表示字符的特殊编码，每个字符引用以 & 开始，分号 ; 结束
 
