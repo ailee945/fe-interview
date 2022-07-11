@@ -73,7 +73,7 @@ HTML 语义化的好处包括
 
 ## 哪些字符集编码支持简体中文，如何解决 HTML 乱码问题 ？
 
-支持简体中文的字符集编码
+### 支持简体中文的字符集编码
 
 - GB 2312
   - 共收录 6763 个汉字，其中一级汉字 3755 个，二级汉字 3008 个，同时收录拉丁字母、希腊字母、日文平假名和片假名字母、俄语西里尔字母在内 682 个字符
@@ -109,12 +109,12 @@ HTML 语义化的好处包括
 - UTF-32
   - 固定长度的编码方案，不管字符编号大小，始终使用 4 字节存储
 
-如何解决 HTML 汉字乱码问题
+### 如何解决 HTML 汉字乱码问题
 
 HTML 汉字乱码的原因：
 
 - 客户端不支持 HTML 编码的字符集
-- 实际存储的字符集与使用 meta 标签声明的字符集不一致
+- 实际存储的字符集与使用 `meta` 标签声明的字符集不一致
   - 部分现代浏览器会自动纠正，根据实际使用的字符集编码渲染 HTML
   
 解决方法：
@@ -128,16 +128,16 @@ HTML 汉字乱码的原因：
 ## 什么是HTML5，新特性有哪些？
 
 - 什么是HTML5：HTML5 是定义 HTML 标准的最新版本，具有两个不同的概念：
-  - HTML5 是一个新版本的 HTML 语言，具有新的元素，属性和行为
-  - HTML5 有更大的技术集，允许构建多样化和更强大的网站和应用程序
+  - HTML5 是一个*新版本*的 HTML 语言，具有新的元素，属性和行为
+  - HTML5 有更大的*技术集*，允许构建多样化和更强大的网站和应用程序
 - 新特性
   - 语义化：能够更恰当的描述内容是什么
-    - 新的区块元素和段落元素：`<section>` `<artical>` `<header>` `nav` `<footer>` `<aside>` `<hgroup>`；嵌入和允许操作的新多媒体内容`<audio>` `<video>`
+    - 新的区块元素和段落元素：`<section>` `<artical>` `<header>` `<nav>` `<footer>` `<aside>` `<hgroup>`；嵌入和允许操作的新多媒体内容`<audio>` `<video>`
     - 表单的改进
       - 强制性校验API `required` `pattern` `minlength` `maxlength` `constraint validation API`
-      - `<input>`标签的type属性值：color date detetime-local month range search tel time url
+      - `<input>`标签的type属性值：`color` `date` `detetime-local` `month` `range` `search` `tel` `time` `url`
     - 其他新的语义元素
-      - <> mark figure data time progress meter main output
+      - `mark` `figure` `data` `time` `progress` `meter` `main` `output`
     - `<iframe>`的改进：精准控制iframe元素的安全级别和期望的渲染：`sandbox` `srcdoc`
     - `<MathML>`用于描述数学公式
   - 连通性：通过创新的技术方法进行通信
@@ -171,7 +171,7 @@ HTML 汉字乱码的原因：
           - `this.files`
         - 通过 drogenter dragover drag 的 dataTransfer 的 files 中获取文件列表
         - 对象 URL window.URL.createObjectURL() 和 window.URL.revokeObjectURL()
-  - 多媒体：加快普及video和audio应用，丰富Web表现力
+  - 多媒体：加快普及`video`和`audio`应用，丰富Web表现力
     - HTML5 音视频
       - `<video>` 和 `<audio>` 标签以及 JavaScript 和 APIs 用于对其进行控制
     - WebRTC
@@ -180,7 +180,6 @@ HTML 汉字乱码的原因：
     - Camera API
       - 使用手机的摄像头拍照，然后把拍到的照片发送给当前网页
     - Track 和 WebVTT
-
       - `<track>` 元素怒被当作媒体元素 `<audio>` 和 `<video>` 的子元素
       - WebVTT（Web 视频文本跟踪格式）使用 `<track>` 元素现实定时文本轨道（如字幕或标题）的格式化，支持 VTTCue 和 VTTRegion 接口
   - 2D/3D绘图效果：提供定制图形、动画界面的新选择
@@ -193,17 +192,17 @@ HTML 汉字乱码的原因：
         - WebGL （Web 图形库） 是一个 JavaScript API，可在任何兼容的 Web 浏览器中渲染高性能的交互式 3D 和 2D 图形，无需使用插件
           - WebGL 引入 OpenGL ES 2.0，通过 canvas.getContext('webgl') 使用
           - WebGL 2 引入 OpenGL ES 3.0，通过 canvas.getContext('webgl2') 使用
-      - SVG
-        - SVG （可缩放矢量图形）是一种描述二维的矢量图形，基于 XML 的标记语言
-        - 优雅而简洁地渲染不同大小的图形，并和 CSS，DOM，JavaScript 和 SMIL 等其他网络标准无缝衔接
-        - 可以搜索、索引、编写脚本和压缩，也可以使用任何文本编辑器和绘图软件来创建和编辑 SVG
-  - 性能&集成：提供作用显著的性能优化方案，更有效的使用和设备硬件
+    - SVG
+      - SVG （可缩放矢量图形）是一种描述二维的矢量图形，基于 XML 的标记语言
+      - 优雅而简洁地渲染不同大小的图形，并和 CSS，DOM，JavaScript 和 SMIL 等其他网络标准无缝衔接
+      - 可以搜索、索引、编写脚本和压缩，也可以使用任何文本编辑器和绘图软件来创建和编辑 SVG
+  - 性能&集成：提供作用显著的性能优化方案，更有效的使用设备硬件
     - Web Workers
       - 为 Web 内容在后台线程中运行脚本提供一种简单方法
       - 线程可以执行任务而不干扰用户界面
       - 专用 worker
         - new Worker() 构建
-        - 通过 `postMessage()` 和 `onmessage` 事件函数发送和接收消息
+        - 通过 `postMessage()` 和 `onmessage()` 事件函数发送和接收消息
       - 共享 worker
         - new SharedWorker() 构建
         - 通过 `postMessage()` 和 `onmessage` 事件函数发送和接收消息
@@ -224,11 +223,11 @@ HTML 汉字乱码的原因：
           - History.scrollRestoration 允许 Web 应用程序在历史导航上显式地设置默认滚动恢复行为。此属性可以是自动的（auto）或者手动的（manual）
           - History.state 返回一个表示历史堆栈顶部的状态的值。这是一种可以不必等待 popstate 事件而查看状态的方式
         - 方法
-          - History.back() 在浏览器历史记录里前往上一页，用户可以点击浏览器左上角的返回按钮模拟此方法，等价于 history.go(-1)
-          - History.forward() 在浏览器历史记录中前往下一页，用户可以点击浏览器左上角的前进按钮模拟此方法，等价于 history.go(1)
-          - History.go() 通过当前页面的相对位置从浏览器历史记录（会话记录）加载页面
-          - History.pushState() 按指定的名称和 URL（如果提供该参数）将数据 push 进会话历史栈，数据被 DOM 进行不透明处理，你可以指定任何可以被序的 JavaScript 对象
-          - History.replaceState() 按指定的数据，名称和 URL（如果提供该参数）更新历史栈上最新的入口。这个数据被 DOM 进行了不透明处理。您可以指定任何可以被序列化的 JavaScript 对象
+          - `History.back()` 在浏览器历史记录里前往上一页，用户可以点击浏览器左上角的返回按钮模拟此方法，等价于 history.go(-1)
+          - `History.forward()` 在浏览器历史记录中前往下一页，用户可以点击浏览器左上角的前进按钮模拟此方法，等价于 history.go(1)
+          - `History.go()` 通过当前页面的相对位置从浏览器历史记录（会话记录）加载页面
+          - `History.pushState()` 按指定的名称和 URL（如果提供该参数）将数据 push 进会话历史栈，数据被 DOM 进行不透明处理，你可以指定任何可以被序的 JavaScript 对象
+          - `History.replaceState()` 按指定的数据，名称和 URL（如果提供该参数）更新历史栈上最新的入口。这个数据被 DOM 进行了不透明处理。您可以指定任何可以被序列化的 JavaScript 对象
     - Content Editable
       - HTML 中任何元素都可以被编辑，设置 contenteditable 属性为 true 即可
       - HTML5 将此属性标准化
@@ -253,7 +252,7 @@ HTML 汉字乱码的原因：
           - 拖拽操作结束时，在源元素（开始拖拽时的目标元素）上触发 dragend 事件
           - 不管拖拽是完成还是取消，这个事件都会被触发
     - HTML 焦点管理
-      - DOM 属性 `activeElement` 与方法 hasFocus() 为程序按提供了更好的控制页面交互的能力，特别是丢与用户行为引发的交互
+      - DOM 属性 `activeElement` 与方法 `hasFocus()` 为程序按提供了更好的控制页面交互的能力，特别是丢与用户行为引发的交互
         - `activeElement` 只读属性，用来返回当前在 DOM 或者 shadow DOM 树中处于聚焦状态的 Element
         - `Document.hasFocus()` 方法返回一个 `Boolean`，表明当前文档或者文档内的节点是否获得了焦点。该方法可以用来判断当前文档中的活动元素是否获得了焦点
       - 两者关系
@@ -272,8 +271,8 @@ HTML 汉字乱码的原因：
         - DocumentOrShadowRoot.fullscreenElement fullscreenElement 属性提供了当前在 DOM（或者 shadow DOM）里被展示为全屏模式的 Element，如果这个值为 null，文档不处于全屏模式
         - Document.fullscreenEnabled fullscreenEnabled 属性提供了启用全屏模式的可能性。当它的值是 false 的时候，表示全屏模式不可用
       - 事件处理程序
-        - Document 事件处理程序 onfullscreenchange 和 onfullscreenerror
-        - Element 事件处理程序 onfullscreenchange 和 onfullscreenerror
+        - Document 事件处理程序 `onfullscreenchange` 和 `onfullscreenerror`
+        - Element 事件处理程序 `onfullscreenchange` 和 `onfullscreenerror`
     - 指针锁定 API
       - 光标移到浏览器或者屏幕区域之外，指针锁定也能够让你访问鼠标事件
       - 指针锁定是持久性的。指针锁定不释放鼠标，直到作出一个显式的 API 调用或者用户使用一个专门的释放手势
@@ -318,7 +317,9 @@ HTML 汉字乱码的原因：
 
 ## 什么是MIME，常见的MIME有哪些
 
-媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型 ）是一种标准，是指示文件类型的字符串。他与传统windows上文件扩展名有相同的目的，主要有两种类型`text/plain`表示文本文件的默认值，它是人类可读的，不包含二进制； `application/octet-stream`表示所有其他情况的默认值
+媒体类型（通常称为 Multipurpose Internet Mail Extensions 或 MIME 类型 ）是一种标准，是指示文件类型的字符串。他与传统windows上文件扩展名有相同的目的，主要有两种类型`text/plain`表示文本文件的默认值，它是人类可读的，不包含二进制；`application/octet-stream`表示所有其他情况的默认值
+
+通用结构: `type/subtype`
 
 ## 什么是ARIA
 
@@ -334,7 +335,7 @@ ARIA(Accessible Rich Internet Application)是能够让残障人士更加便利�
 - HTML 超文本标记语言标记标签通常被称为 HTML 标签
 - HTML 标签是 HTML 语言中最基本单位和重要组成部分
 - HTML 标签不区分大小写，从一致性、可读性等方面来说，最好仅使用小写字母
-- HTML 标签以尖括号（ <> ）开始和结束
+- HTML 标签以尖括号`< >`开始和结束
   - 通常成对出现，分别是开始标签和结束标签，也可以称为开放标签和闭合标签
   - 自闭合标签只有其本身，在开始标签中自动闭合
 
@@ -442,34 +443,34 @@ HTML 头部元素，即 `<head>` 元素
   
   |元素|描述|
   |:---:|:---:|
-  |mian|定义文档中主要或是重要的内容|
-  |header|定义页面或章节的头部。包含logo、页面标题和导航性的内容|
-  |footer|定义页面或章节的尾部。包含版权信息、法律信息和反馈建议用的地址|
-  |body|代表HTML文档的内容。在文档中只能有一个body|
-  |section|定义文档中的一个章节|
-  |nav|定义只包含导航链接的章节|
-  |artical|可以定义独立于内容其余部分的完整独立内容块|
-  |aside|定义和页面内容关联度较低的内容，如果被删除剩下的内容依然合理|
-  |address|定义包含联系信息的一个章节|
-  |h1-h6|文档标题，简要描述章节的主题|
+  |`main`|定义文档中主要或是重要的内容|
+  |`header`|定义页面或章节的头部。包含logo、页面标题和导航性的内容|
+  |`footer`|定义页面或章节的尾部。包含版权信息、法律信息和反馈建议用的地址|
+  |`body`|代表HTML文档的内容。在文档中只能有一个body|
+  |`section`|定义文档中的一个章节|
+  |`nav`|定义只包含导航链接的章节|
+  |`artical`|可以定义独立于内容其余部分的完整独立内容块|
+  |`aside`|定义和页面内容关联度较低的内容，如果被删除剩下的内容依然合理|
+  |`address`|定义包含联系信息的一个章节|
+  |`h1-h6`|文档标题，简要描述章节的主题|
 
   - 1.2 组织
 
   |元素|描述|
   |:---:|:---:|
-  |`<p>` |定义一个段落|
-  |`<hr>` |代表章节、文章或其他长内容中的段落之间的分隔符|
-  |`<pre>` |代表其内容已经预先排版过，格式应当保留|
-  | `<blockquote>` |代表引用自其他来源的内容|
-  | `<ol>` |定义一个有序列表|
-  | `<ul>`| 定义一个无序列表|
-  | `<li>` |定义列表中的一个列表项|
-  | `<dl>` |定义一个定义列表（一系列术语和其定义）|
-  | `<dt>` |定义一个由下一个` <dd> `定义的术语|
-  | `<dd>` |代表出现在它之前的术语的定义|
-  | `<figure>`| 代表一个和文档有关的图例|
-  | `<figcaption>` |代表一个图例的说明|
-  | `<div>` |代表一个通用的容器，没有特殊含义|
+  |`<p>`|定义一个段落|
+  |`<hr>`|代表章节、文章或其他长内容中的段落之间的分隔符|
+  |`<pre>`|代表其内容已经预先排版过，格式应当保留|
+  |`<blockquote>`|代表引用自其他来源的内容|
+  |`<ol>`|定义一个有序列表|
+  |`<ul>`| 定义一个无序列表|
+  |`<li>`|定义列表中的一个列表项|
+  |`<dl>`|定义一个定义列表（一系列术语和其定义）|
+  |`<dt>`|定义一个由下一个`<dd>`定义的术语|
+  |`<dd>`代表出现在它之前的术语的定义|
+  |`<figure>`|代表一个和文档有关的图例|
+  |`<figcaption>`|代表一个图例的说明|
+  |`<div>`|代表一个通用的容器，没有特殊含义|
 
 - 2.为什么我们需要结构化
   - 2.1 便于用户在短时间内通过标题和开头找到相关内容，避免用户感到沮丧并离开
@@ -498,7 +499,7 @@ HTML 头部元素，即 `<head>` 元素
 
 使用`<abbr>`包裹缩略语或者缩写，在title属性中提供缩写的解释
 
-`<acronym>`基本上与`<abbr>`相同，专门用于首字母缩写
+~~`<acronym>`基本上与`<abbr>`相同，专门用于首字母缩写(废弃)~~
 
 ## 如何标记作者的联系方式
 
@@ -521,14 +522,10 @@ CO<sup>2</sup> // 化学方程式二氧化碳
 - `<kbd>`
 - `<samp>`
 
-## 标记时间和日期
+## 标记时间和日期(讨论中)
 
 - `<time>`用来表示 24 小时制时间或者公历日期，表示日期时可以包含时间和时区, `<time>`意在以机器可读的格式表示日期和时间
   - `datetime`属性表示此元素的时间和日期，属性值必须是有效的日期格式，并可包含时间
-
-## 如何设置副标题
-
-简单的使用p标签包裹副标题，也可以使用hgroup标签(尽管已经从W3C规范中删除)
 
 ## 表象元素都有哪些
 
@@ -544,11 +541,11 @@ u b i, 不建议使用，使用css管理样式更加灵活、便与性能优化�
 - `<nav>` 用于展示导航，包含到其他主要目录的链接
 - `<footer>` 表示最近一个章节内容或者根节点元素的页脚。页脚通常包含该章节作者、版权数据或者与文档相关的链接
 - `<address>` 表示联系信息，关联上下文，可以是地址、网址、邮箱、电话、社交账号等
-- `<h1>` - `<h6>` 表示 6 个从小到大不同级别的标题， `<h1>` 级别最高， `<h6>` 级别最低
+- `<h1>`-`<h6>` 表示 6 个从小到大不同级别的标题, `<h1>` 级别最高, `<h6>` 级别最低
 
 ## 无语义元素有哪些，什么时候使用
 
-`div` 和 `span` 以及 表象元素i, b, u
+`div` 和 `span` 以及表象元素`i, b, u`
 
 ## 什么是可替换元素，为什么称之为可替换元素
 
@@ -563,6 +560,7 @@ u b i, 不建议使用，使用css管理样式更加灵活、便与性能优化�
 - `script`标签会阻塞浏览器渲染
   - 内联script中的代码执行完毕后触发渲染
   - 外链script位于body中触发渲染之前的元素，位于其他位置不触发渲染
+  - 注意使用 defer 及 async 属性
 - `link`标签不阻塞dom解析，但是会阻塞渲染和其后js执行
 - img video audio 等可替换标签不阻塞dom渲染，等渲染树生成且资源下载后再渲染
 
@@ -581,16 +579,11 @@ u b i, 不建议使用，使用css管理样式更加灵活、便与性能优化�
 
 ## 什么是HTML属性
 
-HTML元素包含属性
+HTML元素包含属性, 以键值对的形式出现
 
 - 不会出现在实际内容中
 - 包含元素的额外信息，被用来配置元素和调整元素行为
 
-## HTML元素必须包含哪些内容
-
-- 一个空格 在属性和元素名称之间
-- 属性名称，后面跟着一个等号
-- 属性值，用一对双引号引起来
 
 ## 什么是布尔属性
 
@@ -609,6 +602,12 @@ HTML元素包含属性
 - 链接到特定id设置href属性
   - 不同url在文档结尾使用#指向id
   - 同一文档中，直接使用#指向id
+
+  ```html
+  <a href="#id-01">锚点</a>
+  ...
+  <a id="id-01">链接到的位置</a>
+  ```
 
 ## 浏览器如何对待引号没有闭合的属性，如何理解HTML的宽松解析
 
@@ -661,15 +660,17 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 
 ## 如何创建一个下载链接
 
-设置 a 标签的 download 属性
+设置 `a` 标签的 `download` 属性
 
-- 指示浏览器下载 URL 而不是导航到 URL，提示用户将其保存为本地文件
+
 - 属性值可以在保存提示中用作预先填写的文件名
   - 斜杠 / 和反斜杠 \ 会被转换为下划线
   - 大多数文件系统限制一些标点符号，浏览器会相应地调整建议名称
+
+注意: 
+
 - download 属性仅适用于同源 URLs
-- 使用 blob: URLs 和 data: URLs方便用户下载 JavaScript 方式生成内容
-  - 例如 Canvas，Base64 编码图片等
+- 尽管 HTTP URL 需要位于同一源中，但是可以使用 blob: URL 和 data: URL ，以方便用户下载使用 JavaScript 生成的内容（例如使用在线绘图 Web 应用程序创建的照片
 - 如果 HTTP 头存在 Content-Disposition 属性
   - 属性值不同于 download 设置值，HTTP 头优先使用此属性
   - 属性值设置为 inline
@@ -712,7 +713,7 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 
 - 在图片的上下文中描述图片
 - 使用图片的 alt 标签描述图片
-- 使用图片的 title标签配合祖先标题描述图片
+- 使用图片的 title 标签配合祖先标题描述图片
 - 使用 `<div>`和`<p>`组合
 
   ```html
@@ -735,8 +736,8 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 
 - HTML图像：指用`img`标签插入的图像，可以设置alt属性，提供备选文本，可以被屏幕阅读器识别
 - CSS图像：指用`background`等属性放置的图像，用来提升视觉效果，没有语义，不能提供备选文本、难以被屏幕阅读器识别
-- 如果对图像有意义，利于SEO优化，提高访问性，应使用HTML图像
-- 没有意义，用作装饰，或者提高图片被猜忌、保存的难度，应使用CSS图像
+- *如果对图像有意义，利于SEO优化，提高访问性，应使用HTML图像*
+- *没有意义，用作装饰，或者提高图片被猜忌、保存的难度，应使用CSS图像*
 
 ## 什么是矢量图，他和位图的区别是什么
 
@@ -817,7 +818,7 @@ HTML5 微数据允许通过特定的机器可读的标签来标记内容，只�
 
 - 装饰性图片 `image-set`支持声明一组图像的地址，分辨率，和type
   
-  ```cs
+  ```css
   background-image: image-set("1x.png" 1x, "2x.png" 2x, "3x.png" 3x)
   @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 264dpi) {
   /* 高分辨率下,如 iPad 2 的背景图 */
@@ -865,14 +866,14 @@ HTML5使用`video`元素用于在文档中插入视频
 
 ## 有哪些标签可以插入外部内容
 
-- link 外部css、favicon.ico
-- script 外部js
-- img 外部图像
-- audio 外部音频
-- video 外部视频
-- iframe 嵌入外部网页
-- embed 嵌入插件（大部分浏览器已经取消）
-- object 嵌入插件
+- `link` 外部css、favicon.ico
+- `script` 外部js
+- `img` 外部图像
+- `audio` 外部音频
+- `video` 外部视频
+- `iframe` 嵌入外部网页
+- ~~`embed` 嵌入插件(大部分浏览器已经取消)~~
+- `object` 嵌入插件
 
 ## 兼容性较好的视频音频格式
 
@@ -890,9 +891,9 @@ HTML5使用`video`元素用于在文档中插入视频
 使用`<source>`标签
 
 - 设置type属性声明资源的MIME类型，增加资源的备选类型
-  - 图像，优先使用现代图片格式，如webm avif， jpg png托底
+  - 图像，优先使用现代图片格式，如webm avif，jpg png托底
   - 视频，优先使用webm，mp4托底
-  - 饮品，优先使用mp3
+  - 音频，优先使用mp3
 - 使用替换内容，如图片的img标签嵌入flash支持老版本浏览器
   
 ## 如何为视频嵌入字幕
@@ -931,9 +932,9 @@ HTML5使用`video`元素用于在文档中插入视频
 
 - HTML表格是由行和列组成的数据集，用于表示结构化数据
 - 三种实现方式
-  - table：目前已经不用于布局，专注于数据格式化场景
+  - table：目前已经不用于布局，专注于**数据格式化场景**
   - div+css：大量数据的场景下，配合虚拟渲染，提高渲染性能，但不利于SEO
-  - canvas：效率高于dom，主要用于在线文档等基于表格的应用
+  - canvas：效率高于dom，主要用于**在线文档**等基于表格的应用
 
 ## 为什么使用css而不是table表格布局
 
