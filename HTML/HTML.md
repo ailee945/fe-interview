@@ -977,10 +977,9 @@ HTML5使用`video`元素用于在文档中插入视频
   ```css
   /* 首先找到所有当前元素的兄弟元素，然后按照位置先后顺序从1开始排序，选择的结果为CSS伪类:nth-child括号中表达式（an+b）匹配到的元素集合（n=0，1，2，3...） */
   td:nth-child(2n+1) /* 奇数行 */
-  td:thh-child(odd) /* 奇数行 */
-  td:thh-child(2n) /* 偶数行 */
-  td:thh-child(even) /* 偶数行 */
-  td:thh-child(even) /* 偶数行 */
+  td:nth-child(odd) /* 奇数行 */
+  td:nth-child(2n) /* 偶数行 */
+  td:nth-child(even) /* 偶数行 */
   ```
 
   ```css
@@ -988,7 +987,7 @@ HTML5使用`video`元素用于在文档中插入视频
   td:nth-of-type(2n+1)
   ```
 
-  - 使用列表分组标签`colgroup`和~`col`
+  - 使用列表分组标签`colgroup`和`col`
 
 ## 如何为表格增加标题
 
@@ -1017,23 +1016,6 @@ HTML5使用`video`元素用于在文档中插入视频
 
 - 设置表头单元格 `<th>` 的 id 属性，添加唯一 id
 - 设置单元格 `<td>` 的 headers 属性，包含从属于标题的表头单元格的 id 空格分隔
-
-  ```html
-  <table>
-    <caption>表格标题</caption>
-    <thead>
-      <tr><th id="colgroup_1">列标题 1</th><th colspan="2" id="colgroup_2">跨列标题 2 - 3</th></tr>
-      <tr><th id="col_1">列标题 1</th><th id="col_2">列标题 2</th><th id="col_3">列标题 3</th></tr>
-    </thead>
-    <tbody>
-      <tr><th id="row_1">行标题</th><td headers="colgroup_2 col_2 row_1">2</td><td headers="colgroup_2 col_3 row_1">3</td></tr>
-      <tr><th rowspan="2" id="row_2">跨行标题</th><td headers="colgroup_2 col_2 row_2">2</td><td headers="colgroup_2 col_3 row_2">3</td></tr>
-      <tr><td headers="colgroup_2 col_2 row_2">2</td><td headers="colgroup_2 col_3 row_2">3</td></tr>
-      <tr><td headers="colgroup_1 col_1">1</td><td headers="colgroup_2 col_2">2</td><td headers="colgroup_2 col_3">3</td></tr>
-      <tr><td headers="colgroup_1 col_1">1</td><td headers="colgroup_2 col_2">2</td><td headers="colgroup_2 col_3">3</td></tr>
-    </tbody>
-  </table>
-  ```
 
 ## 什么是HTML表单
 
@@ -1067,7 +1049,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 - input生成的按钮：
   - value同时设置显示值和提交值，只支持纯文本
   - type支持button submit reset三种基本按钮类型
-    - 还支持单选radio 复选checkbox 颜色选择color 带图像的提交按钮image 稳健选择按钮file
+    - 还支持单选radio 复选checkbox 颜色选择color 带图像的提交按钮image 文件选择按钮file
   - 兼容性好
 - button生成的按钮
   - value设置提交值，只支持纯文本
@@ -1080,16 +1062,16 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 - `<form>`的以下属性
   - action属性，设置表单提交URL，能被提交按钮的formaction属性覆盖
   - method属性，设置HTTP方式提交表单的方法
-    - post 表单数据包含在请求体内发送给服务器
-    - get 表单数据以查询字符串的方式拼接在URL中，用？作为分隔符
-    - dialog 表单在`<dialog>`中，提交时关闭对话框
-  - enctype属性设置提交表单服务器MIME类型，能够北提交按钮的formenctype属性覆盖
+    - `post` 表单数据包含在请求体内发送给服务器
+    - `get` 表单数据以查询字符串的方式拼接在URL中，用？作为分隔符
+    - `dialog` 表单在`<dialog>`中，提交时关闭对话框
+  - enctype属性设置提交表单服务器MIME类型，能够被提交按钮的formenctype属性覆盖
     - application/x-www-form-urlencoded 未指定属性时的默认值
     - multipart/form-data 表单域中包含文件上传部件时使用
     - text/plain 用于 HTML5 调试
 - 表单部件的以下属性
   - name，表单控件的名称，提交键值对的键名
-  - value，表单控件的值，提交的兼职对的键值
+  - value，表单控件的值，提交的键值对的键值
 
 ## 表单元素一定要用form包裹吗，不包裹会怎么样
 
@@ -1160,7 +1142,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
       姓名:
       <abbr title="required">*</abbr>
     </label>
-    <input id="name" type="text" name="name" />
+    <input id="name" type="text" name="name" required />
   ```
 
 ## 如何禁用表单元素
@@ -1171,14 +1153,14 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 ## 如何让让表单元素自动对焦
 
-给表单元素增加autofocus属性
+给表单元素增加`autofocus`属性
 
-文档中只有一个表单元素可以设置autofocus属性，多个表单设置autofocus属性只有第一个表单元素会自动对角
+文档中只有一个表单元素可以设置`autofocus`属性，多个表单设置`autofocus`属性只有第一个表单元素会自动对焦
 
 ## 如何将表单元素与表单关联
 
 - 将表单元素放在`<form>`中
-- 设置表单元素的form属性，指向`<form>`的id
+- 设置表单元素的`form`属性，指向`<form>`的id
 - 通过js设置表单元素关联，调用form的submit方法
 
 ## 如何允许用户一次性输入多个电子邮件地址，逗号分隔
@@ -1285,13 +1267,13 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
 复选框
 
-- 设置`type = "checked"`属性
+- 设置`type="checked"`属性
 - 表单被提交后可以获得提交键名和键值对字符串
 - 选中项具有checked属性
 
 ## 如何在表单中发送图片中被点击时的坐标
 
-- 设置 type=image
+- 设置`type=image`
   - 支持与 `<img>` 元素的相同属性
   - 支持其它表单按钮的支持属性
 - 使用图像按钮提交表单
@@ -1314,9 +1296,6 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
   - 较高部分high-max
 - `optimum`定义`<meter>`元素的最优解
   - 这个属性用来指示最优/最佳取值。它必须在正确的值域内（由最小值属性和最大值属性定义）。当使用了 low 和 high 属性时，它指明哪一个取值范围是更好的。例如，假设它介于最小值和 low 之间，那么 lower 区间就被认为是更佳的取值范围。
-  - optimum 值在较低范围内，较低范围最优，中等范围一般，较高范围最坏
-  - optimum 值在中等范围内，较低范围一般，中等范围最优，较高范围最坏
-  - optimum 值在较高范围内，较低范围最坏，中等范围一般，较高范围最优
 - `<meter>`颜色
   - 最优显示为绿色
   - 平均显示为黄色
@@ -1463,7 +1442,6 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
         ```
 
 - 2. 然后，发送数据
-
   - 使用 XMLHttpRequest 对象
 
     ```js
