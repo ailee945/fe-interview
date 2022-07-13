@@ -6,18 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      @media screen and (-webkit-min-device-pixel-ratio: 2) {
-        .border {
-          border: 0.5px solid;
-        }
+      div {
+        position: relative;
+        font-size: 100px;
+        color: #fff;
       }
-      .normal {
-        border: 1px solid;
+      div p {
+        position: absolute;
+        margin: 0;
+      }
+      div p:first-child {
+        font-weight: bolder;
+        color: black;
       }
     </style>
   </head>
   <body>
-    <div class="border">媒体查询实例</div>
-    <div class="normal">正常边框</div>
+    <div>
+      <p>文字描边</p>
+      <p>文字描边</p>
+    </div>
   </body>
 </html>
