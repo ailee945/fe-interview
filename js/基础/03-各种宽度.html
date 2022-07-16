@@ -16,7 +16,7 @@
         padding: 5px;
         border: 5px solid red;
         overflow-x: auto;
-        overflow-y: hidden;
+        overflow-y: visible;
         background: yellow;
       }
     </style>
@@ -28,15 +28,23 @@
     </div>
     <script>
       const divEl = document.querySelector("div");
-      console.log("offsetHeight", divEl.offsetHeight);
-      console.log("scrollHeight", divEl.scrollHeight);
-      console.log("clientHeight", divEl.clientHeight);
-      divEl.addEventListener("mousemove", (e) => {
+      divEl.addEventListener("click", (e) => {
+        console.log("========== 刷新 ==========");
+        // 宽度
+        // 滚动条高度15px
+        // 元素的像素高度，包含padding border
+        console.log("offsetHeight", divEl.offsetHeight); // 120
+        // 包含元素的padding 不包含border和margin
+        console.log("scrollHeight", divEl.scrollHeight); // 190
+        // height + CSS padding - 水平滚动条高度 (如果存在) 来计算
+        console.log("clientHeight", divEl.clientHeight); // 95
+
+        // 位置
         console.log("clientX", e.clientX);
         console.log("pageX", e.pageX);
         console.log("ScreenX", e.screenX);
         console.log(divEl.getBoundingClientRect());
-        console.log(divEl.offsetLeft);
+        // console.log(divEl.offsetLeft); // 0
       });
     </script>
   </body>
