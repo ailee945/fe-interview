@@ -17,13 +17,13 @@ const ulEl = document.querySelector("ul");
 // }
 
 // var + 闭包
-// for (var i = 0; i < liEls.length; i++) {
-//   liEls[i].onclick = (function (a) {
-//     return function () {
-//       alert(a + 1);
-//     };
-//   })(i);
-// }
+for (var i = 0; i < liEls.length; i++) {
+  liEls[i].onclick = (function (a) {
+    return function () {
+      alert(a + 1);
+    };
+  })(i);
+}
 
 // DOM监听是异步的
 // for (var i = 0; i < liEls.length; i++) {
@@ -33,6 +33,6 @@ const ulEl = document.querySelector("ul");
 // }
 
 // 事件委托
-ulEl.addEventListener("click", (e) => {
-  console.log(e);
-});
+// ulEl.addEventListener("click", (e) => {
+//   console.log(e);
+// });

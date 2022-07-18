@@ -13,12 +13,12 @@
       const data = {};
       Object.defineProperty(data, "text", {
         set(value) {
-          inputEl.value = value;
-          this.value = value;
+          this.value = inputEl.value;
         },
       });
-      inputEl.onChange = function (e) {
+      inputEl.onchange = function (e) {
         data.text = e.target.value;
+        console.log(data);
       };
     </script>
   </body>

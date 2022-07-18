@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
   </head>
   <div id="box" style="width: 200px; height: 200px; background: green">
     <div class="icon" style="width: 20px; height: 20px; background: red">
@@ -26,6 +32,9 @@
         }
       };
       const doc = document.body;
+      /*
+       * 点击图标增加边框，点击空白区域去掉边框
+       */
       doc.onclick = function (e) {
         const children = box.children;
         for (let i = 0; i < children.length; i++) {

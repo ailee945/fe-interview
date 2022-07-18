@@ -12,6 +12,28 @@
       <li>2</li>
       <li>3</li>
     </ul>
+    <!-- <script>
+      const ulEl = document.querySelector("ul");
+      const liEl = document.querySelectorAll("li");
+      // 1. for循环
+      // for (const key of liEl) {
+      //   key.onclick = (e) => {
+      //     console.log(e.target.innerText);
+      //   };
+      // }
+      // 2. 事件委托
+      // ulEl.onclick = (e) => {
+      //   console.log(e.target.innerText);
+      // };
+      // 3. 闭包
+      for (var i = 0; i < liEl.length; i++) {
+        liEl[i].onclick = (function (a) {
+          return function () {
+            alert(a + 1);
+          };
+        })(i);
+      }
+    </script> -->
     <script src="./21-getLiIndex.js"></script>
   </body>
 </html>

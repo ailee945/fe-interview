@@ -4,13 +4,18 @@ const info = {
   age: 25,
   2: 2,
   0: 0,
-  [Symbol()]:666
-
+  [Symbol()]: 666,
 };
+
+Object.defineProperty(info, "extra", {
+  value: "defined",
+});
 
 // 遍历属性
 // 1
-console.log(Object.keys(info)); 
+console.log(Object.keys(info));
+console.log(Object.getOwnPropertyDescriptors(info));
+console.log(Object.getOwnPropertySymbols(info));
 
 // 2
 for (const key in info) {
@@ -21,7 +26,7 @@ for (const key in info) {
 console.log(Object.getOwnPropertyNames(info));
 
 // 4
-console.log(Reflect.ownKeys(info)); 
+console.log(Reflect.ownKeys(info));
 
 // 需要注意的事情
 // 首先遍历所有数值键，按照数值升序排列。

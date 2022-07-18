@@ -32,8 +32,11 @@ console.log(Array.from(new Set(arr)));
 // 遍历创建新数组
 const newArr1 = [];
 arr.forEach((element) => {
-  // newArr1.indexOf(element) === -1 && newArr1.push(element) // 不能处理NaN
-  !newArr1.includes(element) && newArr1.push(element);
+  // 无法判断NaN
+  newArr1.indexOf(element) === -1 && newArr1.push(element) // 不能处理NaN
+  
+  // 可以判断NaN
+  // !newArr1.includes(element) && newArr1.push(element);
 });
 console.log(newArr1);
 // 利用对象的属性名不能重复的特点

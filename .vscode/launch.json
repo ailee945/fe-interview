@@ -9,7 +9,7 @@
       "request": "launch",
       "name": "Launch Program",
       "skipFiles": ["<node_internals>/**"],
-      "program": "${workspaceFolder}/JS/基础/05-test.js"
+      "program": "${workspaceFolder}/JS/基础/07-数组去重.js"
     }
   ]
 }

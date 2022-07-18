@@ -5,8 +5,8 @@ function getTime() {
   // 变成两位
   month = month < 10 ? "0" + month : month;
   let day = date.getDay();
-  day = day<10?'0'+day:day
+  day = day < 10 ? "0" + day : day;
   console.log(`${year}/${month}/${day}`);
 }
 
-getTime()
+getTime();
