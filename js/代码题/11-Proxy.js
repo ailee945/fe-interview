@@ -13,9 +13,16 @@ const handler = {
   },
 };
 const infoProxy = new Proxy(info, handler);
+
 infoProxy.name = "lee";
+// setter lee
+
 console.log("last row", infoProxy.name);
+// getter { name:"lee", age: 18 } name
+// last row lee
+
 console.log("last row", info.name);
+// last row lee
 
 // Proxy的作用
 

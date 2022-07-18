@@ -11,3 +11,6 @@ process.nextTick(function () {
   console.log(4);
 });
 console.log(5);
+
+// 执行环境为 node
+// 2 5 4 3 1

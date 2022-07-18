@@ -9,8 +9,9 @@ const iteratorArr = {
   next: function () {
     if (index < arr.length) {
       return { value: arr[index++], done: true };
+    } else {
+      return { value: undefined, done: false };
     }
-    return { value: undefined, done: false };
   },
 };
 
@@ -26,10 +27,10 @@ console.log(iteratorArr.next());
 const obj = {
   arr: [10, 20, 30, 40],
   [Symbol.iterator]: function () {
-    let index = 0
+    let index = 0;
     return {
       // 这里面需要使用箭头函数
-      next: ()=> {
+      next: () => {
         if (index < this.arr.length) {
           return { value: this.arr[index++], done: true };
         }
@@ -39,7 +40,7 @@ const obj = {
   },
 };
 
-const iter = obj[Symbol.iterator]()
+const iter = obj[Symbol.iterator]();
 console.log(iter.next());
 console.log(iter.next());
 console.log(iter.next());

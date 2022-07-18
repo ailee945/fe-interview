@@ -10,7 +10,15 @@ obj1.c.c1 = 41;
 console.log(newObj);
 
 // 展开运算符
+const o2 = { ...obj1 };
+console.log(o2);
+const a2 = [...arr];
+console.log(a2);
 
 // slice方法-数组
+const a3 = arr.slice();
+console.log(a3);
 
 // concat方法-数组
+const a4 = arr.concat();
+console.log(a4);

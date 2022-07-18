@@ -10,12 +10,12 @@
     <!-- <script>
       // 微任务在dom渲染之前执行，宏任务在dom渲染之后执行。
       document.body.style.background = "red";
-      console.log(1);
+      console.log("1");
       Promise.resolve().then(() => {
-        console.log(2);
+        console.log("2");
         document.body.style.background = "yellow"; // 页面直接变成黄色
       });
-      console.log(3);
+      console.log("3");
     </script> -->
     <button>click</button>
     <script>

@@ -5,14 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      li {
+        margin: 0;
+        padding: 0;
+        height: 20px;
+        line-height: 20px;
+      }
+      code,
+      pre {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <h2>类数组对象转数组的方法</h2>
     <ul>
       <li>新建数组，遍历类数组对象，将每个元素放入数组</li>
-      <li><code>Array.prototype.slice.call(Arraylike)或者[].slice.call(Arraylike)</code></li>
+      <li>
+        <code
+          >Array.prototype.slice.call(Arraylike)或者[].slice.call(Arraylike)</code
+        >
+      </li>
       <li><pre>Array.from(Arraylike)</pre></li>
-      <li>apply第二个参数传进去, 调用数组方法 <code>Array.prototype.push.apply([], ArrayLike)</code></li>
+      <li>
+        apply第二个参数传进去, 调用数组方法
+        <code>Array.prototype.push.apply([], ArrayLike)</code>
+      </li>
     </ul>
     <script>
       const liEl = document.querySelector("li");
