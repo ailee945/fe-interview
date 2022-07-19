@@ -23,11 +23,11 @@
 2. webpack 通过入口点（entry point）递归处理各模块引用关系，最后输出为一个或多个产物包 js(bundle) 文件。
 3. 每一个入口点都是一个块组（chunk group），在不考虑分包的情况下，一个 chunk group 中只有一个 chunk，该 chunk 包含递归分析后的所有模块。每一个 chunk 都有对应的一个打包后的输出文件（asset/bundle）
 
-![ ](../../img/打包思想.png)
+![ ](../img/打包思想.png)
 
 ## 打包流程
 
-![ ](../../img/打包流程.png)
+![ ](../img/打包流程.png)
 
 - Webpack CLI 启动打包流程；
 - 载入 Webpack 核心模块，创建 Compiler 对象；
@@ -43,6 +43,6 @@
 - Compilation：代表一次 webpack 构建和生成编译资源的的过程，在watch模式下每一次文件变更触发的重新编译都会生成新的 Compilation 对象，包含了当前编译的模块 module, 编译生成的资源，变化的文件, 依赖的状态等
 - 而每个模块间的依赖关系，则依赖于AST语法树。每个模块文件在通过Loader解析完成之后，会通过acorn库生成模块代码的AST语法树，通过语法树就可以分析这个模块是否还有依赖的模块，进而继续循环执行下一个模块的编译解析。
 
-![ ](../../img/webpack%E6%89%93%E5%8C%85.png)
+![ ](../img/webpack%E6%89%93%E5%8C%85.png)
 
-![ ](../../img/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png)
+![ ](../img/%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png)

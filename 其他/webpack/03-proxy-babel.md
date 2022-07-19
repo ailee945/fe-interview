@@ -56,4 +56,4 @@ babel 的编译过程分为三个阶段：parsing、transforming、generating，
 
 ## rollup
 
-![ ](../../img/rollup.png)
+![ ](../img/rollup.png)

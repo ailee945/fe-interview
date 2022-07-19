@@ -35,6 +35,23 @@
 // node 中可能打印 timer1, timer2, promise1, promise2
 // 也可能打印 timer1, promise1, timer2, promise2
 
+setTimeout(function () {
+  console.log(1);
+}, 0);
+new Promise(function (resolve) {
+  console.log(2);
+  resolve();
+}).then(function () {
+  console.log(3);
+});
+process.nextTick(function () {
+  console.log(4);
+});
+console.log(5);
+
+// 执行环境为 node
+// 2 5 4 3 1
+
 setTimeout(() => {
   console.log("setTimeout");
 }, 0);
