@@ -117,6 +117,7 @@ HTML 汉字乱码的原因：
 - 实际存储的字符集与使用 `meta` 标签声明的字符集不一致
   - 部分现代浏览器会自动纠正，根据实际使用的字符集编码渲染 HTML
   
+
 解决方法：
 
 - 建议使用 utf-8 存储并在页面添加`<meta charset="utf-8">`声明编码类型
@@ -1528,7 +1529,7 @@ HTML表单负责数据采集，收集的数据被发送到Web服务器，由三�
 
       - 盒子模型：保持相同的宽度和高度
 
-        ```css
+        ```htt
         button, input, select, textarea {
         -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
