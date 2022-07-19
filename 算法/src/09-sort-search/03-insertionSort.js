@@ -1,13 +1,9 @@
-/**
- * 插入排序
- */
-
 Array.prototype.insertionSort = function () {
   for (let i = 1; i < this.length; i++) {
     let j = i;
     const temp = this[i];
     while (j > 0) {
-      if (this[j - 1] > temp) {
+      if (this[j-1] > temp) {
         this[j] = this[j - 1];
       } else {
         break;
